@@ -1,0 +1,24 @@
+[meta title:"SE Asia Bombs" description:"TK Description" /]
+
+[Nav fullWidth:true /]
+
+[Header
+  title:`["Bombs over", "Asia"]`
+  longTitle:`["Bombs in", "Southeast Asia"]`
+  date:"April 15, 2019"
+  dek:"TK Description"
+  fullWidth:true
+  authors:`[{
+    name: "Megan Vo",
+    role: ''
+  }]`
+  doi:""
+  archive:""
+  source:""
+/]
+
+TK Text...
+
+
+
+[NextArticle fullWidth:true /]
