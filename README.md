@@ -1,7 +1,6 @@
-# 01-bias in ML
+# 01-se-asia-bombs 
 
-Bias in ML
-
+Aerial Bombings in Southeast Asia from 1965-1975 and Impact Today
 
 ## Installing dependencies
 
