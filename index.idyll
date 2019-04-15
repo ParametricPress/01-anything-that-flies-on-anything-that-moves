@@ -3,22 +3,80 @@
 [Nav fullWidth:true /]
 
 [Header
-  title:`["Bombs over", "Asia"]`
-  longTitle:`["Bombs in", "Southeast Asia"]`
+  title:`["Anthything", "That Moves"]`
+  longTitle:`["Anything That Flies,", "On Anything That Moves"]`
   date:"April 15, 2019"
-  dek:"TK Description"
+  dek:"Raise awareness of less publicized US bombings on Southeast Asia by showing geographical pattern of those bombings throughout time and the operations/historical events (i.e. Paris Peace Treaty, etc.) that correspond with them"
   fullWidth:true
   authors:`[{
     name: "Megan Vo",
     role: ''
   }]`
+  headerImage:"static/images/el-capitan.png"
   doi:""
   archive:""
   source:""
 /]
 
-TK Text...
+On the 9th of December 1970, President Nixon broke his promise to Congress by demanding airstrikes deep within Cambodia, outside of the 30 kilometer jurisdiction from Vietnam’s borders. Dissatisfied and frustrated with the inefficacy of the bombing operations in rooting out the North Vietnamese, Nixon ordered Kissinger to call for a mass carpet bombing over the small country -- to which Kissinger passed on to General Haig, “It’s an order, it’s to be done. Anything that flies on anything that moves.”
+
+Much of the publicity surrounding US bombing campaigns during the Vietnam War highlighted the destruction taking place in North Vietnam, placing public pressure on tighter bombing restrictions over the area. However, the US also secretly bombed Cambodia and Laos during the 60s and 70s at a much higher magnitude than North Vietnam. The covert status of these bombings allowed the US to wage mass air warfare over the Southeast Asian countries with little scrutiny. Data records of these bombing missions from the Department of Defense tell lesser-known stories of the Vietnam War’s sideshows, and underlying them is a violent legacy of the war that endures to this day.
 
 
 
-[NextArticle fullWidth:true /]
+[Scroller]
+
+  [Graphic]
+  [/Graphic]
+
+
+  [Step]
+    Here is the impact and breakdown of all bombing missions on each country...
+  [/Step]
+
+  [Step]
+    Laos: > 2,000,000 tons
+
+    Laos is widely considered the most heavily bombed country per capita in the world. For nine years, the US dropped an equivalent of a planeload of bombs every eight minutes around the clock. Despite past government claims that the bombings were done over rural, unpopulated areas, these missions destroyed many villages, and displaced, maimed, and killed many Laotian civilians. It is estimated that 30 percent of these bombs -- the most common and dangerous being the cluster bomb -- remain undetonated throughout the country today.
+  [/Step]
+  [Step]
+    Cambodia: ~500,000 tons
+
+    Conventional literature of the Vietnam War estimates that around 500,000 tons of bombs were dropped over Cambodia. However, Ben Kiernan -- a leading historian of Cambodia -- proposes estimates of around 2.7 tons of ordnance based on his research, which would make Cambodia one of the most heavily bombed countries to date. The incongruence of the two estimates suggest that the data supplied by the Department of Defense is incomplete.
+  [/Step]
+  [Step]
+    South Vietnam: > 2,000,000 tons and North Vietnam (~1,000,000 tons)
+
+    In conventional literature, South Vietnam suffered the most bombings in terms of raw count despite being a US ally. The central province of Quang Tri is recorded as the most heavily bombed area in all of Vietnam with only 11 of 3,500 villages remaining after the campaigns. Like Laos and Cambodia, Vietnam is contaminated with unexploded ordnances leftover from the war.
+  [/Step]
+
+  [Step]
+    The bombings had more effect on the country than generating body counts and riddling the land with bombs and unexploded ordnances. At the time, the Khmer Rouge used the intense bombing campaigns as propaganda to help them gain footing among villagers devastated by the bombs. The group grew to later take over Cambodia and massacre almost one-fourth of the population.
+  [/Step]
+[/Scroller]
+
+
+// [Map with points and timeline would be here. Scrolls down and is replaced with the following]
+// [End of Graphic]
+
+## A Forgotten Legacy
+
+By the end of the war, the US is estimated to have dropped over seven million tons of bombs over Southeast Asia. To put that into context, that is the equivalent of around five times the weight of the Twin Towers together and at least three times the amount of tonnage dropped during World War II. The tonnage of bombs dropped over Laos -- a country about the size of Utah -- is roughly the same as the total tonnage of bombs dropped during the entire second World War.
+
+The leftover bombs not only serve as a historical reminders but obstacles for the Southeast Asian countries. Decades after the war, unexploded bombs still kill and maim citizens. The bombs also prevent cultivation of rural land. In Laos’ case, undetonated ordinance contributes to high poverty levels in many of the country’s poorest districts. It was only until 2000 when President Clinton released records of these bombings to help aid with the removal of the unexploded bombs. As of 2016, less than one percent of bombs have been disposed.
+
+US efforts to oust communist threats with mass carpet bombing did not work. In many cases, it did the opposite and helped their adversaries rise to power. Despite this devastating impact, the bombings remain a short footnote in the history of the Vietnam War and are almost nonexistent in popular US memory.
+
+
+
+[AuthorBio]
+
+**Megan Vo** is a TK TK put bio here.
+
+Edited by Victoria Uren and Matthew Conlen.
+
+[/AuthorBio]
+
+[NextArticle /]
+
+[Footer fullWidth:true /]
