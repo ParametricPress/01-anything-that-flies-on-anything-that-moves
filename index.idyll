@@ -1,7 +1,7 @@
 [meta title:"SE Asia Bombs" description:"TK Description" /]
 
 // Variables
-[var name:play value:false /]
+[var name:play value:true /]
 [var name:month value:1/]
 [var name:year value:1965/]
 

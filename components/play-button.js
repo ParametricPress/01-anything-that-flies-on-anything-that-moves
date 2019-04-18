@@ -6,7 +6,6 @@ class PlayButton extends React.Component {
     this.props.updateProps({
       play: !this.props.play
     });
-    console.log(this.props.play);
 
     // If turned on, auto-increment timeline
     if (this.props.play) {
@@ -38,7 +37,7 @@ class PlayButton extends React.Component {
     return (
       <div {...props}>
         <button onClick={this.play.bind(this)}>
-          {this.props.play ? 'Pause' : 'Play'}
+          {this.props.play ? 'Play' : 'Pause'}
         </button>
       </div>
     );
