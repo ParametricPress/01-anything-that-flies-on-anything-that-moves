@@ -19,5 +19,12 @@ export let headlines = [
       'The three-year bombing operation over North Vietnam ends, lasting longer than US air involvement within Europe during the entirety of World War II. Rolling Thunder is regarded as a failure and had little effect in terms of whittling down North Vietnamese effort. Conventional literature estimates 864,000 tons of bombs dropped on North Vietnam thus far.',
     month: 10,
     year: 1968
+  },
+  {
+    headline:
+      'Johnson Calls for Complete Halt of North Vietnam Bombings; Operation Steel Tiger ends',
+    paragraph: 'Blah blah blah',
+    month: 11,
+    year: 1968
   }
 ];

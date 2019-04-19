@@ -22,7 +22,7 @@ class PlayButton extends React.Component {
             month: this.props.month + 1 // regularly update month
           });
         }
-      }, 250);
+      }, 500);
     } else {
       clearInterval(this.interval);
     }
