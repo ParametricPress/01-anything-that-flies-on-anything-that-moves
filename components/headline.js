@@ -4,10 +4,33 @@
 const React = require('react');
 import { headlines } from '../headline-data.js';
 
+// Wrapper parent component
 class Headline extends React.Component {
-  // Wrapper parent component
+  constructor(props) {
+    super(props);
+    this.state = {
+      headlineSubset: []
+    };
+  }
+
+  // Looks at month to see if we need to update headlines
+  componentDidUpdate(prevProps) {
+    if (prevProps.month !== this.props.month) {
+      let filteredHeadline = headlines.filter(headline => {
+        return (
+          headline.month === this.props.month &&
+          headline.year === this.props.year
+        );
+      });
+      let newSubset = this.state.headlineSubset.concat(filteredHeadline);
+      this.setState({
+        headlineSubset: newSubset
+      });
+    }
+  }
+
   render() {
-    return <HeadlineList headlineList={headlines} />;
+    return <HeadlineList headlineList={this.state.headlineSubset} />;
   }
 }
 
@@ -32,7 +55,7 @@ class HeadlineItem extends React.Component {
 
     return (
       <div {...props}>
-        <h1>{item.headline}</h1>
+        <h3>{item.headline}</h3>
         <p>{item.paragraph}</p>
       </div>
     );
