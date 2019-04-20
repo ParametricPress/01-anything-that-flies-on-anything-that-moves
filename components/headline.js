@@ -2,7 +2,7 @@
 // import { data } from 'path'
 
 const React = require('react');
-import { headlines } from '../headline-data.js';
+import { headlines } from './headline-data.js';
 
 // Wrapper parent component
 class Headline extends React.Component {

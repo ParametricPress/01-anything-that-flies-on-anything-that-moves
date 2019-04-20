@@ -14,12 +14,16 @@
   },
   "dependencies": {
     "d3": "^4.0.0",
+    "deck.gl": "^5.3.5",
     "idyll": "^4.0.7",
     "idyll-d3-component": "^2.0.0",
-    "parametric-components": "^1.0.19",
-    "parametric-styles": "^1.0.15"
+    "papaparse": "^4.6.3",
+    "parametric-components": "^1.0.21",
+    "parametric-styles": "^1.0.15",
+    "react-map-gl": "^3.3.9"
   },
   "devDependencies": {
+    "csv-parser": "^2.2.0",
     "gh-pages": "^0.12.0"
   }
 }
