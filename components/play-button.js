@@ -1,6 +1,10 @@
 const React = require('react');
 
 class PlayButton extends React.Component {
+  constructor(props) {
+    super(props);
+    this.date = new Date(`${props.year}-${props.month}-${props.day}`);
+  }
   play() {
     // Pause if playing, play if paused
     this.props.updateProps({
@@ -10,19 +14,17 @@ class PlayButton extends React.Component {
     // If turned on, auto-increment timeline
     if (this.props.play) {
       this.interval = setInterval(() => {
-        if (this.props.month === 12) {
-          // Wrap around if month is Dec and increment year
-          var newYear = 1965 + ((this.props.year + 1 - 1965) % 9);
-          this.props.updateProps({
-            month: 1,
-            year: newYear
-          });
-        } else {
-          this.props.updateProps({
-            month: this.props.month + 1 // regularly update month
-          });
-        }
-      }, 500);
+        this.date.setDate(this.date.getDate() + 1);
+        // TODO - check if we've gone out of range
+        console.log(this.date);
+        console.log(this.date.getDate(), this.date.getMonth() + 1, this.date.getFullYear())
+
+        this.props.updateProps({
+          day: this.date.getDate(),
+          month: this.date.getMonth() + 1,
+          year: this.date.getFullYear(),
+        })
+      }, 250);
     } else {
       clearInterval(this.interval);
     }
