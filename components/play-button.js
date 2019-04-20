@@ -16,14 +16,14 @@ class PlayButton extends React.Component {
       this.interval = setInterval(() => {
         this.date.setDate(this.date.getDate() + 1);
         // TODO - check if we've gone out of range
-        console.log(this.date);
-        console.log(this.date.getDate(), this.date.getMonth() + 1, this.date.getFullYear())
+        // console.log(this.date);
+        // console.log(this.date.getDate(), this.date.getMonth() + 1, this.date.getFullYear())
 
         this.props.updateProps({
           day: this.date.getDate(),
           month: this.date.getMonth() + 1,
-          year: this.date.getFullYear(),
-        })
+          year: this.date.getFullYear()
+        });
       }, 250);
     } else {
       clearInterval(this.interval);

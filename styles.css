@@ -28,3 +28,27 @@
 .collapse.show {
   display: block;
 }
+
+.collapsible {
+  background-color: white;
+  color: #444;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  border-bottom: 1px solid black;
+  text-align: left;
+  outline: none;
+  font-size: 0.8em;
+}
+
+.collapsible:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: black;
+  float: right;
+  margin-left: 5px;
+}
+
+.collapsible.open:after {
+  content: '\2796'; /* Unicode character for "minus" sign (-) */
+}

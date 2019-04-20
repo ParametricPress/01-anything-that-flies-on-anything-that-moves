@@ -1,6 +1,6 @@
 const React = require('react');
 import { Collapse } from 'react-bootstrap';
-import { headlines } from '../headline-data.js';
+import { headlines } from './headline-data.js';
 
 // Wrapper parent component
 class Headline extends React.Component {
@@ -13,46 +13,50 @@ class Headline extends React.Component {
 
   // Looks at month to see if we need to update headlines
   componentDidUpdate(prevProps) {
-    if (prevProps.month !== this.props.month) {
+    let propsDate = new Date(
+      `${this.props.year}-${this.props.month}-${this.props.day}`
+    );
+    let prevDate = new Date(
+      `${prevProps.year}-${prevProps.month}-${prevProps.day}`
+    );
+
+    if (prevDate !== propsDate) {
       // Adds headline to subset stage
       let filteredHeadline = headlines.filter(headline => {
+        // prevents re-rendering infinite loop
+        if (this.state.headlineSubset.includes(headline)) {
+          return false;
+        }
         return (
-          headline.startMonth === this.props.month &&
-          headline.startYear === this.props.year
+          propsDate.getMonth() + 1 === headline.startMonth &&
+          propsDate.getFullYear() === headline.startYear &&
+          propsDate.getDate() === headline.startDay
         );
       });
 
-      // Keeps only the active headlines on stage
-      let keptHeadlines = this.state.headlineSubset.filter(headline => {
-        // let diffInMonth = Math.abs(this.props.month - headline.startMonth);
+      // only update if this has an event
+      if (filteredHeadline.length >= 1) {
+        // Keeps only the active headlines on stage
+        // let keptHeadlines = this.state.headlineSubset.filter(headline => {
 
-        // if the date is the same: remove
-        // if the date is 1 month before, fade
-        if (
-          (this.props.month === headline.endMonth - 1 &&
-            this.props.year === headline.endYear) ||
-          (this.props.month === 12 &&
-            headline.endMonth === 1 &&
-            this.props.year === headline.endYear - 1)
-        ) {
-          headline['fade'] = true;
-        }
-        if (
-          this.props.month === headline.endMonth &&
-          this.props.year === headline.endYear
-        ) {
-          return false;
-        } else {
-          return true;
-        }
-      });
+        //   if (
+        //     this.props.month === headline.endMonth &&
+        //     this.props.year === headline.endYear &&
+        //     this.props.day === headline.endDay
+        //   ) {
+        //     return false;
+        //   } else {
+        //     return true;
+        //   }
+        // });
 
-      // Concats the active to the new headlines and sets it
-      // as new state
-      let newSubset = keptHeadlines.concat(filteredHeadline);
-      this.setState({
-        headlineSubset: newSubset
-      });
+        // Concats the active to the new headlines and sets it
+        // as new state
+        // let newSubset = keptHeadlines.concat(filteredHeadline);
+        this.setState({
+          headlineSubset: this.state.headlineSubset.concat(filteredHeadline)
+        });
+      }
     }
   }
 
@@ -97,7 +101,10 @@ class HeadlineItem extends React.Component {
     let item = this.props.headline;
     return (
       <div className={this.props.fade ? 'faded' : 'active'} {...props}>
-        <button className='collapsible' onClick={this.handleClick}>
+        <button
+          className={this.state.open ? 'collapsible open' : 'collapsible'}
+          onClick={this.handleClick}
+        >
           <h3>{item.headline}</h3>
         </button>
         <Collapse in={this.state.open}>

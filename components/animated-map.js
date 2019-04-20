@@ -1,35 +1,34 @@
 /// app.js
-import React, {Component} from 'react';
-import MapGL, {FlyToInterpolator} from 'react-map-gl';
-import DeckGL, {LineLayer, ArcLayer, ScatterplotLayer} from 'deck.gl';
+import React, { Component } from 'react';
+import MapGL, { FlyToInterpolator } from 'react-map-gl';
+import DeckGL, { LineLayer, ArcLayer, ScatterplotLayer } from 'deck.gl';
 const Papa = require('papaparse');
 
 // Set your mapbox access token here
-const MAPBOX_ACCESS_TOKEN = 'pk.eyJ1IjoibWF0aGlzb25pYW4iLCJhIjoiY2l5bTA5aWlnMDAwMDN1cGZ6Y3d4dGl6MSJ9.JZaRAfZOZfAnU2EAuybfsg';
-
+const MAPBOX_ACCESS_TOKEN =
+  'pk.eyJ1IjoibWF0aGlzb25pYW4iLCJhIjoiY2l5bTA5aWlnMDAwMDN1cGZ6Y3d4dGl6MSJ9.JZaRAfZOZfAnU2EAuybfsg';
 
 let initialViewport;
 
 const asiaVP = {
   latitude: 12.8797,
-  longitude: 121.7740,
+  longitude: 121.774,
   pitch: 0,
   zoom: 3,
   bearing: 0
-}
+};
 
 class App extends Component {
-
   constructor(props) {
     super(props);
 
-    this.getViewport = (v) => {
+    this.getViewport = v => {
       let vp = Object.assign({}, asiaVP);
       if (this.props.isMobile) {
         vp.zoom = vp.zoom - 1;
       }
       return vp;
-    }
+    };
 
     initialViewport = Object.assign({
       latitude: 0,
@@ -42,14 +41,11 @@ class App extends Component {
       transitionInterpolator: new FlyToInterpolator()
     });
 
-
     this.state = {
       viewport: initialViewport,
       initialized: false,
       transitioning: false
     };
-
-
   }
 
   fetchData() {
@@ -60,8 +56,8 @@ class App extends Component {
       delimiter: ',',
       download: true,
       fastMode: true,
-      step: (results) => {
-        results.data.forEach((d) => {
+      step: results => {
+        results.data.forEach(d => {
           let [year, month, day] = d[0].split('-');
           year = +year;
           month = +month;
@@ -74,7 +70,7 @@ class App extends Component {
             lon: +d[2],
             lat: +d[1]
           });
-        })
+        });
       },
       complete: () => {
         console.log('parsing completed');
@@ -134,7 +130,7 @@ class App extends Component {
     let daysData;
     try {
       daysData = this.data[year][month][day];
-    } catch(e) {
+    } catch (e) {
       console.log('no data for ', year, month, day, ':(');
       return [];
     }
@@ -157,19 +153,19 @@ class App extends Component {
     // console.log('pointData', pointData);
 
     const points = new ScatterplotLayer({
-        id: 'points',
-        strokeWidth: 1,
-        opacity: 1,
-        data: daysData,
-        pickable: false,
-        // color: ,
-        getColor: d => [77, 0, 255],
-        // radiusScale: 10000,
-        getPosition: d => [d.lon, d.lat],
-        // getRadius: d => 3,
-        radiusMinPixels: 2,
-        // onHover: ({object}) => alert(`${object.venue}`)
-      });
+      id: 'points',
+      strokeWidth: 1,
+      opacity: 1,
+      data: daysData,
+      pickable: false,
+      // color: ,
+      getColor: d => [77, 0, 255],
+      // radiusScale: 10000,
+      getPosition: d => [d.lon, d.lat],
+      // getRadius: d => 3,
+      radiusMinPixels: 2
+      // onHover: ({object}) => alert(`${object.venue}`)
+    });
 
     return [points];
   }
@@ -178,32 +174,34 @@ class App extends Component {
     // gl.blendFuncSeparate(gl.SRC_ALPHA, gl.ONE, gl.ONE_MINUS_DST_ALPHA, gl.ONE);
     // gl.blendEquation(gl.FUNC_ADD);
     // this.props.updateProps({ stepperIndex: this.props.stepperIndex + 1  });
-    this.props.updateProps({ isLoaded: true  });
+    this.props.updateProps({ isLoaded: true });
   }
 
   render() {
     const { viewport, initialized, transitioning } = this.state;
     if (!initialized) {
-      return <div className="idyll-loading">Loading dataset...</div>;
+      return <div className='idyll-loading'>Loading dataset...</div>;
     }
 
     const _onChangeViewport = this._onChangeViewport.bind(this);
 
     // console.log(this.props.data, this.getLayers());
     return (
-        <MapGL
-          {...viewport}
-          // {...tweenedViewport}
-          mapStyle="mapbox://styles/mapbox/dark-v9"
-          // dragRotate={true}
-          onViewportChange={_onChangeViewport}
-          mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN}>
-          <DeckGL {...viewport} /*{...tweenedViewport}*/
-            layers={this.getLayers()}
-            onWebGLInitialized={this._initialize.bind(this)}
-            />
-        </MapGL>
-      )
+      <MapGL
+        {...viewport}
+        // {...tweenedViewport}
+        mapStyle='mapbox://styles/mapbox/dark-v9'
+        // dragRotate={true}
+        onViewportChange={_onChangeViewport}
+        mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN}
+      >
+        <DeckGL
+          {...viewport} /*{...tweenedViewport}*/
+          layers={this.getLayers()}
+          onWebGLInitialized={this._initialize.bind(this)}
+        />
+      </MapGL>
+    );
   }
 }
 
