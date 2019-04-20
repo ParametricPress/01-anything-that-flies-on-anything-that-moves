@@ -2,10 +2,11 @@
 
 // Variables
 [var name:play value:true /] // controls state of autoplay
-[var name:month value:1/] 
+[var name:day value:1/]
+[var name:month value:10 /]
 [var name:year value:1965/]
 
-// [Nav fullWidth:true /]
+[Nav fullWidth:true /]
 
 [Header
   title:`["Anthything", "That Moves"]`
@@ -27,9 +28,14 @@ On the 9th of December 1970, President Nixon broke his promise to Congress by de
 
 Much of the publicity surrounding US bombing campaigns during the Vietnam War highlighted the destruction taking place in North Vietnam, placing public pressure on tighter bombing restrictions over the area. However, the US also secretly bombed Cambodia and Laos during the 60s and 70s at a much higher magnitude than North Vietnam. The covert status of these bombings allowed the US to wage mass air warfare over the Southeast Asian countries with little scrutiny. Data records of these bombing missions from the Department of Defense tell lesser-known stories of the Vietnam War’s sideshows, and underlying them is a violent legacy of the war that endures to this day.
 
-[Date month:month year:year /]
-[Headline month:month year:year /]
-[PlayButton month:month year:year play:play /]
+
+[data name:"exampleData" source:"10_1965.csv" /]
+
+[Date day:day month:month year:year /]
+[Headline day:day month:month year:year /]
+[PlayButton day:day month:month year:year play:play /]
+
+[AnimatedMap fullWidth:true day:day month:month year:year /]
 
 [Scroller]
 
@@ -76,14 +82,14 @@ US efforts to oust communist threats with mass carpet bombing did not work. In m
 
 
 
-// [AuthorBio]
+[AuthorBio]
 
-// **Megan Vo** is a TK TK put bio here.
+**Megan Vo** is a TK TK put bio here.
 
-// Edited by Victoria Uren and Matthew Conlen.
+Edited by Victoria Uren and Matthew Conlen.
 
-// [/AuthorBio]
+[/AuthorBio]
 
-// [NextArticle /]
+[NextArticle /]
 
-// [Footer fullWidth:true /]
+[Footer fullWidth:true /]
