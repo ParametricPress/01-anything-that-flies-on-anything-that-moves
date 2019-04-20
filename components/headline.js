@@ -1,7 +1,5 @@
-// export let
-// import { data } from 'path'
-
 const React = require('react');
+import { Collapse } from 'react-bootstrap';
 import { headlines } from '../headline-data.js';
 
 // Wrapper parent component
@@ -19,23 +17,30 @@ class Headline extends React.Component {
       // Adds headline to subset stage
       let filteredHeadline = headlines.filter(headline => {
         return (
-          headline.month === this.props.month &&
-          headline.year === this.props.year
+          headline.startMonth === this.props.month &&
+          headline.startYear === this.props.year
         );
       });
 
       // Keeps only the active headlines on stage
       let keptHeadlines = this.state.headlineSubset.filter(headline => {
-        let diffInMonth = Math.abs(this.props.month - headline.month);
+        // let diffInMonth = Math.abs(this.props.month - headline.startMonth);
+
+        // if the date is the same: remove
+        // if the date is 1 month before, fade
         if (
-          (diffInMonth === 4 && this.props.year === headline.year) ||
-          (4 - this.props.month >= 0 &&
-            4 - this.props.month + 12 === headline.month &&
-            this.props.year === headline.year + 1)
+          (this.props.month === headline.endMonth - 1 &&
+            this.props.year === headline.endYear) ||
+          (this.props.month === 12 &&
+            headline.endMonth === 1 &&
+            this.props.year === headline.endYear - 1)
         ) {
           headline['fade'] = true;
         }
-        if (diffInMonth === 6) {
+        if (
+          this.props.month === headline.endMonth &&
+          this.props.year === headline.endYear
+        ) {
           return false;
         } else {
           return true;
@@ -48,7 +53,6 @@ class Headline extends React.Component {
       this.setState({
         headlineSubset: newSubset
       });
-      console.log(this.state.headlineSubset);
     }
   }
 
@@ -77,14 +81,30 @@ class HeadlineList extends React.Component {
 class HeadlineItem extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      open: false
+    };
   }
+
+  handleClick = () => {
+    this.setState({
+      open: !this.state.open
+    });
+  };
+
   render() {
     const { hasError, idyll, updateProps, ...props } = this.props;
     let item = this.props.headline;
     return (
       <div className={this.props.fade ? 'faded' : 'active'} {...props}>
-        <h3>{item.headline}</h3>
-        <p>{item.paragraph}</p>
+        <button className='collapsible' onClick={this.handleClick}>
+          <h3>{item.headline}</h3>
+        </button>
+        <Collapse in={this.state.open}>
+          <div>
+            <p>{item.paragraph}</p>
+          </div>
+        </Collapse>
       </div>
     );
   }

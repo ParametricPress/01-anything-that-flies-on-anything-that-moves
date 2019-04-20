@@ -13,11 +13,13 @@
     ]
   },
   "dependencies": {
+    "bootstrap": "^4.3.1",
     "d3": "^4.0.0",
     "idyll": "^4.0.7",
     "idyll-d3-component": "^2.0.0",
     "parametric-components": "^1.0.19",
-    "parametric-styles": "^1.0.15"
+    "parametric-styles": "^1.0.15",
+    "react-bootstrap": "^1.0.0-beta.8"
   },
   "devDependencies": {
     "gh-pages": "^0.12.0"

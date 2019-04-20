@@ -16,6 +16,15 @@
 }
 
 .active {
-  transition: opacity 0.5s;
+  transition: opacity 1s;
+  transition-delay: 1s;
   opacity: 1;
+}
+
+.collapse {
+  display: none;
+}
+
+.collapse.show {
+  display: block;
 }
