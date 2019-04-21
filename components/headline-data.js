@@ -1,8 +1,8 @@
 export let headlines = [
   {
-    headline: 'Operation Rolling Thunder Hits North Vietnam',
+    headline: 'Operation Rolling Thunder Underway in North Vietnam',
     paragraph:
-      'Operation Rolling Thunder jumpstarts the war under President Lyndon B. Johnson. Originally intended to "break the will of North Vietnam" with heavy bombing, Rolling Thunder eventually shifts aims to destroy the supply line of materials and men from the North to the South.',
+      'Operation Rolling Thunder jumpstarts the war under President Lyndon B. Johnson in early March of 1965. Originally intended to "break the will of North Vietnam" with heavy bombing, Rolling Thunder eventually shifts aims to destroy the supply line of materials and men from the North to the South.',
     startDay: 2,
     startMonth: 10, // change this back to 3
     startYear: 1965,
@@ -35,7 +35,8 @@ export let headlines = [
   {
     headline:
       'Johnson Calls for Complete Halt of North Vietnam Bombings; Operation Steel Tiger ends',
-    paragraph: 'Blah blah blah',
+    paragraph:
+      'Due to pressure from home opposition, Johnson attempts to bring North Vietnam to the bargaining table by halting bombing operations in the area. All the leftover available sorties originally destined for North Vietnam divert to South Vietnam, the Ho Chi Minh Trail, and Northern Laos, which sees a sharp increase in bombing points. This secret redirection to Laos allows the US to avoid political scrutiny. Over the course of the entire year, data show that more than 200 bombings missions are flown to Laos on average per day.',
     startDay: 11,
     startMonth: 11,
     startYear: 1968,
