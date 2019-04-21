@@ -78,7 +78,7 @@ class Headline extends React.Component {
       );
 
       // If the curr date is one week before end day, fade out
-      headlineEndDate.setDate(headlineEndDate.getDate() - 7);
+      headlineEndDate.setDate(headlineEndDate.getDate() - 6);
       if (
         propsDate.getDate() === headlineEndDate.getDate() &&
         propsDate.getMonth() === headlineEndDate.getMonth() &&

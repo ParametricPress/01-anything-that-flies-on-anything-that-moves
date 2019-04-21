@@ -13,6 +13,7 @@
 .faded {
   opacity: 0;
   transition: opacity 1s;
+  pointer-events: none;
 }
 
 .active {
