@@ -34,6 +34,8 @@ class Headline extends React.Component {
       // Concats the active to the new headlines and sets it
       // as new state
       let newSubset = keptHeadlines.concat(filteredHeadline);
+
+      // Only update if you either need to add or remove headline
       if (
         filteredHeadline.length >= 1 ||
         keptHeadlines.length !== this.state.headlineSubset.length
@@ -57,7 +59,9 @@ class Headline extends React.Component {
       return (
         propsDate.getMonth() + 1 === headline.startMonth &&
         propsDate.getFullYear() === headline.startYear &&
-        propsDate.getDate() === headline.startDay
+        (propsDate.getDate() === headline.startDay ||
+          (headline.startDay === 31 &&
+            propsDate.getDate() + 1 === headline.startDay))
       );
     });
     return newHeadlines;
