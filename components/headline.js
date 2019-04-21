@@ -91,7 +91,9 @@ class Headline extends React.Component {
       if (
         propsDate.getMonth() + 1 === headline.endMonth &&
         propsDate.getFullYear() === headline.endYear &&
-        propsDate.getDate() + 1 === headline.endDay
+        (propsDate.getDate() === headline.endDay ||
+          (headline.endDay === 31 &&
+            propsDate.getDate() + 1 === headline.endDay))
       ) {
         return false;
       } else {
