@@ -9,9 +9,13 @@ class Headline extends React.Component {
     this.state = {
       headlineSubset: []
     };
+
+    this.stageNewHeadlines = this.stageNewHeadlines.bind(this);
+    this.removeHeadlines = this.removeHeadlines.bind(this);
   }
 
-  // Looks at month to see if we need to update headlines
+  // When dates update, stages a new headline to display and
+  // filters out any outdated events
   componentDidUpdate(prevProps) {
     let propsDate = new Date(
       `${this.props.year}-${this.props.month}-${this.props.day}`
@@ -22,42 +26,76 @@ class Headline extends React.Component {
 
     if (prevDate !== propsDate) {
       // Adds headline to subset stage
-      let filteredHeadline = headlines.filter(headline => {
-        // prevents re-rendering infinite loop
-        if (this.state.headlineSubset.includes(headline)) {
-          return false;
-        }
-        return (
-          propsDate.getMonth() + 1 === headline.startMonth &&
-          propsDate.getFullYear() === headline.startYear &&
-          propsDate.getDate() === headline.startDay
-        );
-      });
+      let filteredHeadline = this.stageNewHeadlines(propsDate);
 
-      // only update if this has an event
-      if (filteredHeadline.length >= 1) {
-        // Keeps only the active headlines on stage
-        // let keptHeadlines = this.state.headlineSubset.filter(headline => {
+      // Keeps only the active headlines on stage
+      let keptHeadlines = this.removeHeadlines(propsDate);
 
-        //   if (
-        //     this.props.month === headline.endMonth &&
-        //     this.props.year === headline.endYear &&
-        //     this.props.day === headline.endDay
-        //   ) {
-        //     return false;
-        //   } else {
-        //     return true;
-        //   }
-        // });
-
-        // Concats the active to the new headlines and sets it
-        // as new state
-        // let newSubset = keptHeadlines.concat(filteredHeadline);
+      // Concats the active to the new headlines and sets it
+      // as new state
+      let newSubset = keptHeadlines.concat(filteredHeadline);
+      if (
+        filteredHeadline.length >= 1 ||
+        keptHeadlines.length !== this.state.headlineSubset.length
+      ) {
         this.setState({
-          headlineSubset: this.state.headlineSubset.concat(filteredHeadline)
+          headlineSubset: newSubset
         });
       }
     }
+  }
+
+  // Takes in the current props date and filters data
+  // for headlines that match current date. Returns
+  // array of headline objects that do
+  stageNewHeadlines(propsDate) {
+    let newHeadlines = headlines.filter(headline => {
+      // prevents re-rendering infinite loop
+      if (this.state.headlineSubset.includes(headline)) {
+        return false;
+      }
+      return (
+        propsDate.getMonth() + 1 === headline.startMonth &&
+        propsDate.getFullYear() === headline.startYear &&
+        propsDate.getDate() === headline.startDay
+      );
+    });
+    return newHeadlines;
+  }
+
+  // Takes in a current props date and filters out
+  // any headlines that have an end date that matches
+  // the current. Returns an array of headline objects
+  // that should remain on the stage
+  removeHeadlines(propsDate) {
+    let currentHeadlines = this.state.headlineSubset.filter(headline => {
+      let headlineEndDate = new Date(
+        `${headline.endYear}-${headline.endMonth}-${headline.endDay}`
+      );
+
+      // If the curr date is one week before end day, fade out
+      headlineEndDate.setDate(headlineEndDate.getDate() - 7);
+      if (
+        propsDate.getDate() === headlineEndDate.getDate() &&
+        propsDate.getMonth() === headlineEndDate.getMonth() &&
+        propsDate.getFullYear() === headlineEndDate.getFullYear()
+      ) {
+        headline['fade'] = true;
+      }
+
+      // don't include in the kept headlines if end dates are met
+      if (
+        propsDate.getMonth() + 1 === headline.endMonth &&
+        propsDate.getFullYear() === headline.endYear &&
+        propsDate.getDate() + 1 === headline.endDay
+      ) {
+        return false;
+      } else {
+        return true;
+      }
+    });
+
+    return currentHeadlines;
   }
 
   render() {
@@ -105,7 +143,15 @@ class HeadlineItem extends React.Component {
           className={this.state.open ? 'collapsible open' : 'collapsible'}
           onClick={this.handleClick}
         >
-          <h3>{item.headline}</h3>
+          <p className='headline'>
+            {item.startMonth +
+              '/' +
+              item.startDay +
+              '/' +
+              item.startYear +
+              ' - ' +
+              item.headline}
+          </p>
         </button>
         <Collapse in={this.state.open}>
           <div>
