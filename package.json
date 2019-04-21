@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "d3": "^4.0.0",
+    "d3": "4.10.0",
     "deck.gl": "^5.3.5",
     "idyll": "^4.0.7",
     "idyll-d3-component": "^2.0.0",

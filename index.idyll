@@ -31,6 +31,7 @@ Much of the publicity surrounding US bombing campaigns during the Vietnam War hi
 
 // [data name:"exampleData" source:"10_1965.csv" /]
 
+// [LineChart /]
 [Date day:day month:month year:year /]
 [Headline day:day month:month year:year /]
 [PlayButton day:day month:month year:year play:play /]
