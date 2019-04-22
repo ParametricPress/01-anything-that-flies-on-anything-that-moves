@@ -9,21 +9,16 @@ const size = 100;
 class LineChart extends D3Component {
   initialize(node, props) {
     const svg = (this.svg = d3.select(node).append('svg'));
-    svg
-      .attr('viewBox', `0 0 ${size * 2} ${size}`)
-      .style('width', '100%')
-      .style('height', 'auto');
-
-    var margin = { top: 20, right: 20, bottom: 30, left: 40 },
-      width = +svg.attr('width') - margin.left - margin.right,
-      height = +svg.attr('height') - margin.top - margin.bottom;
+    var margin = { top: 30, right: 20, bottom: 30, left: 50 },
+      width = 800 - margin.left - margin.right,
+      height = 470 - margin.top - margin.bottom;
 
     // Parse the date
-    var parseDate = d3.timeFormat('%m/%d/%Y');
+    var parseDate = d3.timeParse('%Y-%m-%d');
 
-    // Returns value in array data that matches horiz position of pointer
+    // Returns value in array data that matches horiz position of der
     var bisectDate = d3.bisector(function(d) {
-      return d.date;
+      return d.DATE;
     }).left;
 
     var x = d3.scaleTime().range([0, width]);
@@ -38,13 +33,15 @@ class LineChart extends D3Component {
     var valueLine = d3
       .line()
       .x(function(d) {
-        return x(d.date);
+        return x(d.DATE);
       })
       .y(function(d) {
-        return y(d.close);
+        return y(d.NUM_MISSIONS);
       });
 
     svg
+      .attr('preserveAspectRatio', 'xMinYMin meet')
+      .attr('viewBox', '0 0 1000 500')
       .append('g')
       .attr('transform', 'translate(' + margin.left + ', ' + margin.top + ')');
 
@@ -53,10 +50,72 @@ class LineChart extends D3Component {
     var focus = svg.append('g').style('display', 'none');
 
     d3.csv('static/data/date_counts.csv', function(error, data) {
-      data.forEach(function(point) {
-        point.date = parseDate(point.DATE);
-        console.log(point.date);
+      data.forEach(function(d) {
+        d.DATE = parseDate(d.DATE);
+        d.NUM_MISSIONS = +d.NUM_MISSIONS;
       });
+
+      // scaling data range
+      x.domain(
+        d3.extent(data, function(d) {
+          return d.DATE;
+        })
+      );
+      y.domain([
+        0,
+        d3.max(data, function(d) {
+          return d.NUM_MISSIONS;
+        })
+      ]);
+
+      // Add the valueline path
+      lineSvg
+        .append('path')
+        .attr('class', 'line')
+        .attr('d', valueLine(data));
+
+      svg
+        .append('g')
+        .attr('class', 'x axis')
+        .attr('transform', 'translate(0,' + height + ')')
+        .call(xAxis);
+
+      // append circle
+      focus
+        .append('circle')
+        .attr('class', 'y')
+        .style('fill', 'none')
+        .style('stroke', 'blue')
+        .attr('r', 4);
+
+      svg
+        .append('rect')
+        .attr('width', width)
+        .attr('height', height)
+        .style('fill', 'none')
+        .style('pointer-events', 'all')
+        .on('mouseover', function() {
+          focus.style('display', null);
+        })
+        .on('mouseout', function() {
+          focus.style('display', 'none');
+        })
+        .on('mousemove', mousemove);
+
+      function mousemove() {
+        var x0 = x.invert(d3.mouse(this)[0]),
+          i = bisectDate(data, x0, 1),
+          d0 = data[i - 1],
+          d1 = data[i],
+          d = x0 - d0.date > d1.date - x0 ? d1 : d0;
+
+        focus
+          .select('circle.y')
+          .attr(
+            'transform',
+            'translate(' + x(d.DATE) + ',' + y(d.NUM_MISSIONS) + ')'
+          );
+      }
     });
   }
 
