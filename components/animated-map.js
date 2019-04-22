@@ -77,20 +77,18 @@ class App extends Component {
       fastMode: true,
       step: results => {
         results.data.forEach(d => {
-          setTimeout(() => {
-            let [dataYear, month, day] = d[0].split('-');
-            dataYear = +dataYear;
-            month = +month;
-            day = +day;
+          let [dataYear, month, day] = d[0].split('-');
+          dataYear = +dataYear;
+          month = +month;
+          day = +day;
 
-            this.data[dataYear] = this.data[dataYear] || {};
-            this.data[dataYear][month] = this.data[dataYear][month] || {};
-            this.data[dataYear][month][+day] = this.data[dataYear][month][day] || [];
-            this.data[dataYear][month][+day].push({
-              lon: +d[2],
-              lat: +d[1]
-            }, 0);
-          })
+          this.data[dataYear] = this.data[dataYear] || {};
+          this.data[dataYear][month] = this.data[dataYear][month] || {};
+          this.data[dataYear][month][+day] = this.data[dataYear][month][day] || [];
+          this.data[dataYear][month][+day].push({
+            lon: +d[2],
+            lat: +d[1]
+          }, 0);
         });
       },
       complete: () => {
