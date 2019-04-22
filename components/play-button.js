@@ -6,6 +6,9 @@ class PlayButton extends React.Component {
     this.date = new Date(`${props.year}-${props.month}-${props.day}`);
   }
   play() {
+    this.date = new Date(
+      `${this.props.year}-${this.props.month}-${this.props.day}`
+    );
     // Pause if playing, play if paused
     this.props.updateProps({
       play: !this.props.play

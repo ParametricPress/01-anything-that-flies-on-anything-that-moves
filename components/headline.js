@@ -25,6 +25,7 @@ class Headline extends React.Component {
     );
 
     if (prevDate !== propsDate) {
+      console.log(this.props.month);
       // Adds headline to subset stage
       let filteredHeadline = this.stageNewHeadlines(propsDate);
 
@@ -145,7 +146,7 @@ class HeadlineItem extends React.Component {
     let item = this.props.headline;
     return (
       <div className={this.props.fade ? 'faded' : 'active'} {...props}>
-        <div className="headline-title">
+        <div className='headline-title'>
           {item.startMonth +
             '/' +
             item.startDay +
@@ -154,7 +155,7 @@ class HeadlineItem extends React.Component {
             ' - ' +
             item.headline}
         </div>
-        <div className="headline-paragraph">{item.paragraph}</div>
+        <div className='headline-paragraph'>{item.paragraph}</div>
       </div>
     );
   }

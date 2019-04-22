@@ -8,6 +8,8 @@ const size = 100;
 
 class LineChart extends D3Component {
   initialize(node, props) {
+    this.play = props.play;
+    console.log(this.play);
     let svg = (this.svg = d3.select(node).append('svg'));
     var margin = { top: 10, right: 0, bottom: 25, left: 0 },
       width = 1200 - margin.left - margin.right,
@@ -19,7 +21,7 @@ class LineChart extends D3Component {
 
     // Returns value in array data that matches horiz position of der
     var bisectDate = d3.bisector(function(d) {
-      return d.DATE;
+      return d.formattedDate;
     }).left;
 
     var x = d3.scaleTime().range([0, width]);
@@ -32,7 +34,7 @@ class LineChart extends D3Component {
     var valueLine = d3
       .line()
       .x(function(d) {
-        return x(d.DATE);
+        return x(d.formattedDate);
       })
       .y(function(d) {
         return y(d.NUM_MISSIONS);
@@ -50,14 +52,14 @@ class LineChart extends D3Component {
 
     d3.csv('static/data/date_counts.csv', function(error, data) {
       data.forEach(function(d) {
-        d.DATE = parseDate(d.DATE);
+        d.formattedDate = parseDate(d.DATE);
         d.NUM_MISSIONS = +d.NUM_MISSIONS;
       });
 
       // scaling data range
       x.domain(
         d3.extent(data, function(d) {
-          return d.DATE;
+          return d.formattedDate;
         })
       );
       y.domain([
@@ -83,8 +85,8 @@ class LineChart extends D3Component {
       focus
         .append('circle')
         .attr('class', 'y')
-        .style('fill', '#c5c5c5')
-        .style('stroke', '#c5c5c5')
+        .style('fill', '#4800ff')
+        .style('stroke', '#4800ff')
         .style('opacity', 0.7)
         .attr('r', 3);
 
@@ -134,27 +136,32 @@ class LineChart extends D3Component {
           i = bisectDate(data, x0, 1),
           d0 = data[i - 1],
           d1 = data[i],
-          d = x0 - d0.DATE > d1.DATE - x0 ? d1 : d0;
+          d = x0 - d0.formattedDate > d1.formattedDate - x0 ? d1 : d0;
 
-        console.log(d.DATE);
-        // this.props.updateProps({
-        //   day: this.date.getDate(),
-        //   month: this.date.getMonth() + 1,
-        //   year: this.date.getFullYear()
-        // });
+        // update props on hover
+        let [dataYear, month, day] = d.DATE.split('-');
+        dataYear = +dataYear;
+        month = +month;
+        day = +day;
+
+        props.updateProps({
+          day: day,
+          month: month,
+          year: dataYear
+        });
 
         focus
           .select('circle.y')
           .attr(
             'transform',
-            'translate(' + x(d.DATE) + ',' + y(d.NUM_MISSIONS) + ')'
+            'translate(' + x(d.formattedDate) + ',' + y(d.NUM_MISSIONS) + ')'
           );
 
         focus
           .select('.x')
           .attr(
             'transform',
-            'translate(' + x(d.DATE) + ',' + y(d.NUM_MISSIONS) + ')'
+            'translate(' + x(d.formattedDate) + ',' + y(d.NUM_MISSIONS) + ')'
           )
           .attr('y2', height - y(d.NUM_MISSIONS));
 
@@ -163,7 +170,7 @@ class LineChart extends D3Component {
           .select('text.y1')
           .attr(
             'transform',
-            'translate(' + x(d.DATE) + ',' + y(d.NUM_MISSIONS) + ')'
+            'translate(' + x(d.formattedDate) + ',' + y(d.NUM_MISSIONS) + ')'
           )
           .text(d.NUM_MISSIONS);
 
@@ -172,14 +179,21 @@ class LineChart extends D3Component {
           .select('text.y3')
           .attr(
             'transform',
-            'translate(' + x(d.DATE) + ',' + y(d.NUM_MISSIONS) + ')'
+            'translate(' + x(d.formattedDate) + ',' + y(d.NUM_MISSIONS) + ')'
           )
-          .text(formatDate(d.DATE));
+          .text(formatDate(d.formattedDate));
       }
     });
   }
 
-  update(props, oldProps) {}
+  update(props, oldProps) {
+    this.play = props.play;
+    if (!this.play) {
+      this.svg.select('rect').style('pointer-events', 'none');
+    } else {
+      this.svg.select('rect').style('pointer-events', 'all');
+    }
+  }
 }
 
 module.exports = LineChart;

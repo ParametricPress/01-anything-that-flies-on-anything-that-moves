@@ -53,7 +53,7 @@ in the visualization below.
 
 
   [div className:"map-interactive-timeline"]
-    [LineChart day:day month:month year:year /]
+    [LineChart day:day month:month year:year play:play /]
   [/div]
 
 [/div]
