@@ -21,7 +21,7 @@ let initialViewport;
 
 const asiaVP = {
   latitude: 15.8700,
-  longitude: 100.9925,
+  longitude: 102.0865,
   pitch: 0,
   zoom: 4,
   bearing: 0
@@ -57,7 +57,7 @@ class App extends Component {
     };
 
     this.dataFetchMap = {};
-    for (var i = 1965; i <= 1975; i++) {
+    for (var i = MIN_YEAR; i <= MAX_YEAR; i++) {
       this.dataFetchMap[i] = fetchStatus.REMOTE;
     }
     this.data = {};
@@ -203,7 +203,7 @@ class App extends Component {
       getColor: d => [77, 0, 255],
       // radiusScale: 10000,
       getPosition: d => [d.lon, d.lat],
-      // getRadius: d => 3,
+      getRadius: d => 2,
       radiusMinPixels: 2
       // onHover: ({object}) => alert(`${object.venue}`)
     });
@@ -219,7 +219,6 @@ class App extends Component {
   }
 
   handleRef(_ref) {
-    console.log('ref');
     if (!_ref) {
       return;
     }
@@ -235,7 +234,7 @@ class App extends Component {
         <MapGL
           {...viewport}
           // {...tweenedViewport}
-          mapStyle='mapbox://styles/mapbox/dark-v9'
+          mapStyle='mapbox://styles/mathisonian/cjurw8owq15tb1fomkfgdvycn'
           dragRotate={false}
           scrollZoom={false}
           // onViewportChange={_onChangeViewport}

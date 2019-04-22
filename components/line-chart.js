@@ -84,8 +84,8 @@ class LineChart extends D3Component {
       focus
         .append('circle')
         .attr('class', 'y')
-        .style('fill', 'none')
-        .style('stroke', 'blue')
+        .style('fill', '#5DA391')
+        .style('stroke', 'none')
         .attr('r', 4);
 
       svg
