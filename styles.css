@@ -59,8 +59,8 @@
 }
 
 path {
-  stroke: steelblue;
-  stroke-width: 2;
+  stroke: darkslategray;
+  stroke-width: 1;
   fill: none;
 }
 
@@ -68,6 +68,11 @@ path {
 .axis line {
   fill: none;
   stroke: grey;
-  stroke-width: 1;
+  stroke-width: 0.5;
   shape-rendering: crispEdges;
+}
+
+.y1,
+.y3 {
+  font-size: 0.5em;
 }
