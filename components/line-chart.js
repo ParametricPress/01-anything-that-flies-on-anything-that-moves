@@ -15,6 +15,7 @@ class LineChart extends D3Component {
 
     // Parse the date
     var parseDate = d3.timeParse('%Y-%m-%d');
+    var formatDate = d3.timeFormat('%b %d %Y');
 
     // Returns value in array data that matches horiz position of der
     var bisectDate = d3.bisector(function(d) {
@@ -26,8 +27,6 @@ class LineChart extends D3Component {
 
     // define axes
     var xAxis = d3.axisBottom(x).ticks(9);
-
-    var yAxis = d3.axisLeft(y);
 
     // define line
     var valueLine = d3
@@ -84,9 +83,10 @@ class LineChart extends D3Component {
       focus
         .append('circle')
         .attr('class', 'y')
-        .style('fill', '#5DA391')
-        .style('stroke', 'none')
-        .attr('r', 4);
+        .style('fill', '#c5c5c5')
+        .style('stroke', '#c5c5c5')
+        .style('opacity', 0.7)
+        .attr('r', 3);
 
       svg
         .append('rect')
@@ -101,13 +101,47 @@ class LineChart extends D3Component {
           focus.style('display', 'none');
         })
         .on('mousemove', mousemove);
+      // .on('click', mouseclick);
+
+      // add x dashed line
+      focus
+        .append('line')
+        .attr('class', 'x')
+        .style('stroke', '#c5c5c5')
+        .style('stroke-dasharray', '3,3')
+        .style('opacity', 0.5)
+        .attr('y1', 0)
+        .attr('y2', height);
+
+      // place the value at the intersection
+      focus
+        .append('text')
+        .attr('class', 'y1')
+        .style('opacity', 0.8)
+        .attr('dx', 3)
+        .attr('dy', '-.5em');
+
+      // place the date at the intersection
+      focus
+        .append('text')
+        .attr('class', 'y3')
+        .style('opacity', 0.8)
+        .attr('dx', 3)
+        .attr('dy', '-1.3em');
 
       function mousemove() {
         var x0 = x.invert(d3.mouse(this)[0]),
           i = bisectDate(data, x0, 1),
           d0 = data[i - 1],
           d1 = data[i],
-          d = x0 - d0.date > d1.date - x0 ? d1 : d0;
+          d = x0 - d0.DATE > d1.DATE - x0 ? d1 : d0;
+
+        console.log(d.DATE);
+        // this.props.updateProps({
+        //   day: this.date.getDate(),
+        //   month: this.date.getMonth() + 1,
+        //   year: this.date.getFullYear()
+        // });
 
         focus
           .select('circle.y')
@@ -115,18 +149,37 @@ class LineChart extends D3Component {
             'transform',
             'translate(' + x(d.DATE) + ',' + y(d.NUM_MISSIONS) + ')'
           );
+
+        focus
+          .select('.x')
+          .attr(
+            'transform',
+            'translate(' + x(d.DATE) + ',' + y(d.NUM_MISSIONS) + ')'
+          )
+          .attr('y2', height - y(d.NUM_MISSIONS));
+
+        // Return the correlated missions value
+        focus
+          .select('text.y1')
+          .attr(
+            'transform',
+            'translate(' + x(d.DATE) + ',' + y(d.NUM_MISSIONS) + ')'
+          )
+          .text(d.NUM_MISSIONS);
+
+        // Return correlated date value
+        focus
+          .select('text.y3')
+          .attr(
+            'transform',
+            'translate(' + x(d.DATE) + ',' + y(d.NUM_MISSIONS) + ')'
+          )
+          .text(formatDate(d.DATE));
       }
     });
   }
 
-  // update(props, oldProps) {
-  //   this.svg
-  //     .selectAll('circle')
-  //     .transition()
-  //     .duration(750)
-  //     .attr('cx', Math.random() * size)
-  //     .attr('cy', Math.random() * size);
-  // }
+  update(props, oldProps) {}
 }
 
 module.exports = LineChart;

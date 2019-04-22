@@ -60,7 +60,7 @@
 
 path {
   stroke: #c5c5c5;
-  stroke-width: 1;
+  stroke-width: 0.5;
   fill: none;
   stroke-linejoin: round;
   shape-rendering: crispEdges;
@@ -72,11 +72,10 @@ path {
 
 .axis path {
   fill: none;
-  stroke: #7E7E7E;
+  stroke: #7e7e7e;
   stroke-width: 0.5;
   shape-rendering: crispEdges;
 }
-
 
 .map-interactive {
   font-family: 'Graphik Web';
@@ -129,7 +128,6 @@ path {
   line-height: 24px;
   font-size: 18px;
 }
-
 
 @media all and (max-width: 1000px) {
   .map-interactive-header {
