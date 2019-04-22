@@ -8,10 +8,10 @@ const size = 100;
 
 class LineChart extends D3Component {
   initialize(node, props) {
-    const svg = (this.svg = d3.select(node).append('svg'));
-    var margin = { top: 30, right: 20, bottom: 30, left: 50 },
-      width = 800 - margin.left - margin.right,
-      height = 470 - margin.top - margin.bottom;
+    let svg = (this.svg = d3.select(node).append('svg'));
+    var margin = { top: 10, right: 0, bottom: 25, left: 0 },
+      width = 1200 - margin.left - margin.right,
+      height = 150 - margin.top - margin.bottom;
 
     // Parse the date
     var parseDate = d3.timeParse('%Y-%m-%d');
@@ -39,9 +39,9 @@ class LineChart extends D3Component {
         return y(d.NUM_MISSIONS);
       });
 
-    svg
+    svg = svg
       .attr('preserveAspectRatio', 'xMinYMin meet')
-      .attr('viewBox', '0 0 1000 500')
+      .attr('viewBox', '0 0 1200 150')
       .append('g')
       .attr('transform', 'translate(' + margin.left + ', ' + margin.top + ')');
 

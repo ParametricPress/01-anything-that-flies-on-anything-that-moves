@@ -145,25 +145,16 @@ class HeadlineItem extends React.Component {
     let item = this.props.headline;
     return (
       <div className={this.props.fade ? 'faded' : 'active'} {...props}>
-        <button
-          className={this.state.open ? 'collapsible open' : 'collapsible'}
-          onClick={this.handleClick}
-        >
-          <p className='headline'>
-            {item.startMonth +
-              '/' +
-              item.startDay +
-              '/' +
-              item.startYear +
-              ' - ' +
-              item.headline}
-          </p>
-        </button>
-        <Collapse in={this.state.open}>
-          <div>
-            <p>{item.paragraph}</p>
-          </div>
-        </Collapse>
+        <div className="headline-title">
+          {item.startMonth +
+            '/' +
+            item.startDay +
+            '/' +
+            item.startYear +
+            ' - ' +
+            item.headline}
+        </div>
+        <div className="headline-paragraph">{item.paragraph}</div>
       </div>
     );
   }
