@@ -4,6 +4,15 @@ import MapGL, { FlyToInterpolator } from 'react-map-gl';
 import DeckGL, { LineLayer, ArcLayer, ScatterplotLayer } from 'deck.gl';
 const Papa = require('papaparse');
 
+const fetchStatus = {
+  PENDING: 'PENDING',
+  FETCHED: 'FETCHED',
+  REMOTE: 'REMOTE'
+};
+
+const MIN_YEAR = 1965;
+const MAX_YEAR = 1975;
+
 // Set your mapbox access token here
 const MAPBOX_ACCESS_TOKEN =
   'pk.eyJ1IjoibWF0aGlzb25pYW4iLCJhIjoiY2l5bTA5aWlnMDAwMDN1cGZ6Y3d4dGl6MSJ9.JZaRAfZOZfAnU2EAuybfsg';
@@ -11,10 +20,10 @@ const MAPBOX_ACCESS_TOKEN =
 let initialViewport;
 
 const asiaVP = {
-  latitude: 12.8797,
-  longitude: 121.774,
+  latitude: 15.8700,
+  longitude: 100.9925,
   pitch: 0,
-  zoom: 3,
+  zoom: 4,
   bearing: 0
 };
 
@@ -39,65 +48,99 @@ class App extends Component {
       bearing: 0,
       transitionDuration: 5000,
       transitionInterpolator: new FlyToInterpolator()
-    });
+    }, asiaVP);
 
     this.state = {
       viewport: initialViewport,
       initialized: false,
       transitioning: false
     };
+
+    this.dataFetchMap = {};
+    for (var i = 1965; i <= 1975; i++) {
+      this.dataFetchMap[i] = fetchStatus.REMOTE;
+    }
+    this.data = {};
   }
 
-  fetchData() {
+  fetchData(year, cb) {
     // Stream big file in worker thread
-    this.data = {};
-    Papa.parse('static/data/results1.csv', {
+    if (this.dataFetchMap[+year] !== fetchStatus.REMOTE) {
+      return;
+    }
+    this.dataFetchMap[+year] = fetchStatus.PENDING;
+    console.log('fetching year', year);
+    Papa.parse(`static/data/by-year/${year}.csv`, {
       // worker: true,
       delimiter: ',',
       download: true,
       fastMode: true,
       step: results => {
         results.data.forEach(d => {
-          let [year, month, day] = d[0].split('-');
-          year = +year;
-          month = +month;
-          day = +day;
+          setTimeout(() => {
+            let [dataYear, month, day] = d[0].split('-');
+            dataYear = +dataYear;
+            month = +month;
+            day = +day;
 
-          this.data[year] = this.data[year] || {};
-          this.data[year][month] = this.data[year][month] || {};
-          this.data[year][month][+day] = this.data[year][month][day] || [];
-          this.data[year][month][+day].push({
-            lon: +d[2],
-            lat: +d[1]
-          });
+            this.data[dataYear] = this.data[dataYear] || {};
+            this.data[dataYear][month] = this.data[dataYear][month] || {};
+            this.data[dataYear][month][+day] = this.data[dataYear][month][day] || [];
+            this.data[dataYear][month][+day].push({
+              lon: +d[2],
+              lat: +d[1]
+            }, 0);
+          })
         });
       },
       complete: () => {
-        console.log('parsing completed');
-        console.log(this.data);
-        this.setState({
-          initialized: true
-        });
+        this.dataFetchMap[+year] = fetchStatus.FETCHED;
+        console.log('completed fetching year', year);
+        cb && cb();
       }
     });
   }
 
   _resize() {
+    console.log('resize', this.ref.getBoundingClientRect().width);
     this._onChangeViewport({
-      width: window.innerWidth,
+      width: this.ref ? this.ref.getBoundingClientRect().width : 400,
       height: window.innerHeight / 2
     });
   }
 
   _onChangeViewport(viewport) {
+    console.log('change viewport');
     this.setState({
       viewport: Object.assign({}, this.state.viewport, viewport)
     });
   }
+
   componentDidMount() {
-    this._resize();
-    this.fetchData();
+    if (!this.ref) {
+      return;
+    }
+    this.fetchData(1965, () => {
+      this.setState({
+        initialized: true
+      });
+      this.fetchData(1966, () => {});
+    });
     window.addEventListener('resize', this._resize.bind(this));
+    this._resize();
+  }
+
+  componentDidUpdate() {
+    const year = +this.props.year
+    if (this.dataFetchMap[year] === fetchStatus.REMOTE) {
+      this.fetchData(year, () => {
+        if (year < MAX_YEAR && this.dataFetchMap[year + 1] === fetchStatus.REMOTE) {
+          this.fetchData(year + 1, () => {});
+        }
+      })
+    } else if (year < MAX_YEAR && this.dataFetchMap[year + 1] === fetchStatus.REMOTE) {
+      this.fetchData(year + 1, () => {});
+    }
   }
 
   // componentWillReceiveProps(newProps) {
@@ -177,30 +220,36 @@ class App extends Component {
     this.props.updateProps({ isLoaded: true });
   }
 
+  handleRef(_ref) {
+    console.log('ref');
+    if (!_ref) {
+      return;
+    }
+    this.ref = _ref;
+    // this._resize();
+  }
+
   render() {
     const { viewport, initialized, transitioning } = this.state;
-    if (!initialized) {
-      return <div className='idyll-loading'>Loading dataset...</div>;
-    }
 
-    const _onChangeViewport = this._onChangeViewport.bind(this);
-
-    // console.log(this.props.data, this.getLayers());
     return (
-      <MapGL
-        {...viewport}
-        // {...tweenedViewport}
-        mapStyle='mapbox://styles/mapbox/dark-v9'
-        // dragRotate={true}
-        onViewportChange={_onChangeViewport}
-        mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN}
-      >
-        <DeckGL
-          {...viewport} /*{...tweenedViewport}*/
-          layers={this.getLayers()}
-          onWebGLInitialized={this._initialize.bind(this)}
-        />
-      </MapGL>
+      <div key={'map'} ref={this.handleRef.bind(this)} style={{width: '100%'}}>
+        <MapGL
+          {...viewport}
+          // {...tweenedViewport}
+          mapStyle='mapbox://styles/mapbox/dark-v9'
+          dragRotate={false}
+          scrollZoom={false}
+          // onViewportChange={_onChangeViewport}
+          mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN}
+        >
+          <DeckGL
+            {...viewport} /*{...tweenedViewport}*/
+            layers={this.getLayers()}
+            onWebGLInitialized={this._initialize.bind(this)}
+          />
+        </MapGL>
+      </div>
     );
   }
 }

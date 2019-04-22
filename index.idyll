@@ -28,46 +28,51 @@ On the 9th of December 1970, President Nixon broke his promise to Congress by de
 
 Much of the publicity surrounding US bombing campaigns during the Vietnam War highlighted the destruction taking place in North Vietnam, placing public pressure on tighter bombing restrictions over the area. However, the US also secretly bombed Cambodia and Laos during the 60s and 70s at a much higher magnitude than North Vietnam. The covert status of these bombings allowed the US to wage mass air warfare over the Southeast Asian countries with little scrutiny. Data records of these bombing missions from the Department of Defense tell lesser-known stories of the Vietnam War’s sideshows, and underlying them is a violent legacy of the war that endures to this day.
 
+Between 1965 and 1975, the United States launched an average of TK
+bombing missions per day, accumulating over two million in total in
+the 10 year span. Each of these potentially deadly strikes are presented
+in the visualization below.
 
 // [data name:"exampleData" source:"10_1965.csv" /]
 
-[LineChart fullWidth:true day:day month:month year:year /]
-[Date day:day month:month year:year /]
-[Headline day:day month:month year:year /]
-[PlayButton day:day month:month year:year play:play /]
+[div fullWidth:true className:"map-interactive"]
 
-[AnimatedMap fullWidth:true day:day month:month year:year /]
+  [div className:"map-interactive-header"]
+    [Date day:day month:month year:year /]
+    [PlayButton day:day month:month year:year play:play /]
+  [/div]
 
-[Scroller]
+  [div className:"map-interactive-content"]
+    [div style:`{width: '50%'}`]
+      [AnimatedMap fullWidth:true day:day month:month year:year /]
+    [/div]
+    [div className:"headline-container"]
+      [Headline day:day month:month year:year /]
+    [/div]
+  [/div]
 
-  [Graphic]
-  [/Graphic]
 
+  [div className:"map-interactive-timeline"]
+    [LineChart day:day month:month year:year /]
+  [/div]
 
-  [Step]
-    Here is the impact and breakdown of all bombing missions on each country...
-  [/Step]
+[/div]
 
-  [Step]
-    Laos: > 2,000,000 tons
+Here is the impact and breakdown of all bombing missions on each country...
 
-    Laos is widely considered the most heavily bombed country per capita in the world. For nine years, the US dropped an equivalent of a planeload of bombs every eight minutes around the clock. Despite past government claims that the bombings were done over rural, unpopulated areas, these missions destroyed many villages, and displaced, maimed, and killed many Laotian civilians. It is estimated that 30 percent of these bombs -- the most common and dangerous being the cluster bomb -- remain undetonated throughout the country today.
-  [/Step]
-  [Step]
-    Cambodia: ~500,000 tons
+## Laos: > 2,000,000 tons
 
-    Conventional literature of the Vietnam War estimates that around 500,000 tons of bombs were dropped over Cambodia. However, Ben Kiernan -- a leading historian of Cambodia -- proposes estimates of around 2.7 tons of ordnance based on his research, which would make Cambodia one of the most heavily bombed countries to date. The incongruence of the two estimates suggest that the data supplied by the Department of Defense is incomplete.
-  [/Step]
-  [Step]
-    South Vietnam: > 2,000,000 tons and North Vietnam (~1,000,000 tons)
+Laos is widely considered the most heavily bombed country per capita in the world. For nine years, the US dropped an equivalent of a planeload of bombs every eight minutes around the clock. Despite past government claims that the bombings were done over rural, unpopulated areas, these missions destroyed many villages, and displaced, maimed, and killed many Laotian civilians. It is estimated that 30 percent of these bombs -- the most common and dangerous being the cluster bomb -- remain undetonated throughout the country today.
 
-    In conventional literature, South Vietnam suffered the most bombings in terms of raw count despite being a US ally. The central province of Quang Tri is recorded as the most heavily bombed area in all of Vietnam with only 11 of 3,500 villages remaining after the campaigns. Like Laos and Cambodia, Vietnam is contaminated with unexploded ordnances leftover from the war.
-  [/Step]
+## Cambodia: ~500,000 tons
 
-  [Step]
-    The bombings had more effect on the country than generating body counts and riddling the land with bombs and unexploded ordnances. At the time, the Khmer Rouge used the intense bombing campaigns as propaganda to help them gain footing among villagers devastated by the bombs. The group grew to later take over Cambodia and massacre almost one-fourth of the population.
-  [/Step]
-[/Scroller]
+Conventional literature of the Vietnam War estimates that around 500,000 tons of bombs were dropped over Cambodia. However, Ben Kiernan -- a leading historian of Cambodia -- proposes estimates of around 2.7 tons of ordnance based on his research, which would make Cambodia one of the most heavily bombed countries to date. The incongruence of the two estimates suggest that the data supplied by the Department of Defense is incomplete.
+
+## South Vietnam: > 2,000,000 tons and North Vietnam (~1,000,000 tons)
+
+In conventional literature, South Vietnam suffered the most bombings in terms of raw count despite being a US ally. The central province of Quang Tri is recorded as the most heavily bombed area in all of Vietnam with only 11 of 3,500 villages remaining after the campaigns. Like Laos and Cambodia, Vietnam is contaminated with unexploded ordnances leftover from the war.
+
+The bombings had more effect on the country than generating body counts and riddling the land with bombs and unexploded ordnances. At the time, the Khmer Rouge used the intense bombing campaigns as propaganda to help them gain footing among villagers devastated by the bombs. The group grew to later take over Cambodia and massacre almost one-fourth of the population.
 
 
 // [Map with points and timeline would be here. Scrolls down and is replaced with the following]
@@ -91,6 +96,6 @@ Edited by Victoria Uren and Matthew Conlen.
 
 [/AuthorBio]
 
-[NextArticle /]
+[NextArticle fullWidth:true /]
 
 [Footer fullWidth:true /]

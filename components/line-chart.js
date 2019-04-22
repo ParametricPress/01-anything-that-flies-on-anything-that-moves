@@ -8,10 +8,10 @@ const size = 100;
 
 class LineChart extends D3Component {
   initialize(node, props) {
-    const svg = (this.svg = d3.select(node).append('svg'));
-    var margin = { top: 30, right: 50, bottom: 30, left: 50 },
-      width = 1000 - margin.left - margin.right,
-      height = 100 - margin.top - margin.bottom;
+    let svg = (this.svg = d3.select(node).append('svg'));
+    var margin = { top: 10, right: 0, bottom: 25, left: 0 },
+      width = 1200 - margin.left - margin.right,
+      height = 150 - margin.top - margin.bottom;
 
     // Parse the date
     var parseDate = d3.timeParse('%Y-%m-%d');
@@ -38,9 +38,9 @@ class LineChart extends D3Component {
         return y(d.NUM_MISSIONS);
       });
 
-    svg
-      .attr('preserveAspectRatio', 'xMinYMin')
-      .attr('viewBox', '0 0 950 100')
+    svg = svg
+      .attr('preserveAspectRatio', 'xMinYMin meet')
+      .attr('viewBox', '0 0 1200 150')
       .append('g')
       .attr('transform', 'translate(' + margin.left + ', ' + margin.top + ')');
 
@@ -83,8 +83,8 @@ class LineChart extends D3Component {
       focus
         .append('circle')
         .attr('class', 'y')
-        .style('fill', 'red')
-        .style('stroke', 'red')
+        .style('fill', '#c5c5c5')
+        .style('stroke', '#c5c5c5')
         .style('opacity', 0.7)
         .attr('r', 3);
 
@@ -107,7 +107,7 @@ class LineChart extends D3Component {
       focus
         .append('line')
         .attr('class', 'x')
-        .style('stroke', 'black')
+        .style('stroke', '#c5c5c5')
         .style('stroke-dasharray', '3,3')
         .style('opacity', 0.5)
         .attr('y1', 0)
@@ -179,14 +179,7 @@ class LineChart extends D3Component {
     });
   }
 
-  // update(props, oldProps) {
-  //   this.svg
-  //     .selectAll('circle')
-  //     .transition()
-  //     .duration(750)
-  //     .attr('cx', Math.random() * size)
-  //     .attr('cy', Math.random() * size);
-  // }
+  update(props, oldProps) {}
 }
 
 module.exports = LineChart;
