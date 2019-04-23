@@ -65,6 +65,12 @@ path {
   stroke-linejoin: round;
   shape-rendering: crispEdges;
 }
+path.loess {
+  stroke-width: 1;
+  stroke-dasharray: 5,5;
+  stroke: #c5c5c5;
+}
+
 
 .axis line {
   display: none;
@@ -72,8 +78,8 @@ path {
 
 .axis path {
   fill: none;
-  stroke: #7e7e7e;
-  stroke-width: 0.5;
+  stroke: #363636;
+  stroke-width: 1;
   shape-rendering: crispEdges;
 }
 
@@ -86,6 +92,12 @@ path {
 }
 .map-interactive text {
   fill: #c5c5c5;
+}
+
+.map-interactive text.y1,
+.map-interactive text.y3 {
+  fill: #fff;
+  text-shadow: 2px 2px 2px #222;
 }
 .map-interactive-header {
   display: flex;

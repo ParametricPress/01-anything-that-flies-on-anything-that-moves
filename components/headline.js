@@ -90,23 +90,6 @@ class Headline extends React.Component {
   }
 }
 
-class HeadlineList extends React.Component {
-  // List component
-  render() {
-    const { headlineList } = this.props;
-    let allHeadlines = headlineList.map((headlineItem, index) => {
-      return (
-        <HeadlineItem
-          fade={headlineItem.fade}
-          headline={headlineItem}
-          key={index}
-        />
-      );
-    });
-    return <div>{allHeadlines}</div>;
-  }
-}
-
 class HeadlineItem extends React.Component {
   constructor(props) {
     super(props);
