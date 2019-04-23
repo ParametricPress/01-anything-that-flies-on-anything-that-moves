@@ -3,13 +3,14 @@
 const React = require('react');
 const D3Component = require('idyll-d3-component');
 const d3 = require('d3');
+import { headlines } from './headline-data.js';
 
 const size = 100;
 
 class LineChart extends D3Component {
   initialize(node, props) {
     this.play = props.play;
-    console.log(this.play);
+
     let svg = (this.svg = d3.select(node).append('svg'));
     var margin = { top: 10, right: 0, bottom: 25, left: 0 },
       width = 1200 - margin.left - margin.right,
@@ -34,7 +35,34 @@ class LineChart extends D3Component {
     var valueLine = d3
       .line()
       .x(function(d) {
-        return x(d.formattedDate);
+        // if date matches headline date, mark position on timeline
+        let [dataYear, month, day] = d.DATE.split('-');
+        dataYear = +dataYear;
+        month = +month;
+        day = +day;
+
+        // filter for matches
+        let match = headlines.filter(headline => {
+          return (
+            headline.startDay === day &&
+            headline.startYear === dataYear &&
+            headline.startMonth === month
+          );
+        });
+
+        // append circles at mark on x axis
+        var mark = x(d.formattedDate);
+        if (match.length > 0) {
+          d['headline'] = true;
+          svg
+            .append('circle')
+            .attr('cx', mark)
+            .attr('cy', height)
+            .attr('fill', 'red')
+            .attr('r', 5);
+        }
+
+        return mark;
       })
       .y(function(d) {
         return y(d.NUM_MISSIONS);
@@ -81,6 +109,8 @@ class LineChart extends D3Component {
         .attr('transform', 'translate(0,' + height + ')')
         .call(xAxis);
 
+      // append headline markers
+
       // append circle
       focus
         .append('circle')
@@ -121,7 +151,7 @@ class LineChart extends D3Component {
         .attr('class', 'y1')
         .style('opacity', 0.8)
         .attr('dx', 3)
-        .attr('dy', '-.5em');
+        .attr('dy', '-.6em');
 
       // place the date at the intersection
       focus
@@ -129,7 +159,7 @@ class LineChart extends D3Component {
         .attr('class', 'y3')
         .style('opacity', 0.8)
         .attr('dx', 3)
-        .attr('dy', '-1.3em');
+        .attr('dy', '-1.5em');
 
       function mousemove() {
         var x0 = x.invert(d3.mouse(this)[0]),
@@ -172,7 +202,7 @@ class LineChart extends D3Component {
             'transform',
             'translate(' + x(d.formattedDate) + ',' + y(d.NUM_MISSIONS) + ')'
           )
-          .text(d.NUM_MISSIONS);
+          .text(d.NUM_MISSIONS + ' ' + 'missions');
 
         // Return correlated date value
         focus
