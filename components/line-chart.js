@@ -1,6 +1,5 @@
 // Reference: https://leanpub.com/D3-Tips-and-Tricks/read#leanpub-auto-starting-with-a-basic-graph
 
-const React = require('react');
 const D3Component = require('idyll-d3-component');
 const d3 = require('d3');
 import { headlines } from './headline-data.js';
@@ -58,7 +57,7 @@ class LineChart extends D3Component {
             .append('circle')
             .attr('cx', mark)
             .attr('cy', height)
-            .attr('fill', 'red')
+            .attr('fill', '#4800ff')
             .attr('r', 5);
         }
 
