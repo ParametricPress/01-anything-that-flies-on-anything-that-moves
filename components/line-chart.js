@@ -21,12 +21,12 @@ class LineChart extends D3Component {
       .select(node)
       .append('svg')
       .style('overflow', 'visible'));
-    var margin = { top: 10, right: 0, bottom: 25, left: 0 },
-      width = 1200 - margin.left - margin.right,
-      height = 150 - margin.top - margin.bottom;
+    var margin = { top: 10, right: 0, bottom: 25, left: 0 };
+    let width = 1200 - margin.left - margin.right;
+    let height = 150 - margin.top - margin.bottom;
 
     // Parse the date
-    var parseDate = d3.timeParse('%Y-%m-%d');
+    let parseDate = d3.timeParse('%Y-%m-%d');
     var formatDate = d3.timeFormat('%b %d %Y');
 
     // Returns value in array data that matches horiz position of der
@@ -34,8 +34,8 @@ class LineChart extends D3Component {
       return d.formattedDate;
     }).left;
 
-    var x = d3.scaleTime().range([0, width]);
-    var y = d3.scaleLinear().range([height, 0]);
+    let x = d3.scaleTime().range([0, width]);
+    let y = d3.scaleLinear().range([height, 0]);
     var loessScale = d3
       .scaleLinear()
       .domain([-1.5, 1.5])
@@ -66,7 +66,6 @@ class LineChart extends D3Component {
         // append circles at mark on x axis
         var mark = x(d.formattedDate);
         if (match.length > 0) {
-          d['headline'] = true;
           svg
             .append('circle')
             .attr('cx', mark)
@@ -89,12 +88,15 @@ class LineChart extends D3Component {
 
     var lineSvg = svg.append('g');
 
-    var focus = svg.append('g').style('display', 'none');
+    let focus = (this.focus = svg.append('g').style('display', 'none'));
+
+    let dateMap = (this.dateMap = new Map());
 
     d3.csv('static/data/date_counts.csv', function(error, data) {
       data.forEach(function(d) {
         d.formattedDate = parseDate(d.DATE);
         d.NUM_MISSIONS = +d.NUM_MISSIONS;
+        dateMap.set(d.DATE, d.NUM_MISSIONS);
       });
 
       // scaling data range
@@ -125,6 +127,7 @@ class LineChart extends D3Component {
           return y(d);
         });
 
+      // path and x axis
       lineSvg
         .append('path')
         .attr('class', 'loess')
@@ -134,8 +137,6 @@ class LineChart extends D3Component {
         .attr('class', 'x axis')
         .attr('transform', 'translate(0,' + height + ')')
         .call(xAxis);
-
-      // append headline markers
 
       // append circle
       focus
@@ -240,13 +241,72 @@ class LineChart extends D3Component {
           .text(formatDate(d.formattedDate));
       }
     });
+
+    // Given current props of month, day, year,
+    // draws line on timeline corresponding to current date
+    function drawLine(props) {
+      // draws animated line on playback
+      var month = props.month + '';
+      var day = props.day + '';
+      if (props.month < 10) {
+        month = '0' + month;
+      }
+      if (props.day < 10) {
+        day = '0' + day;
+      }
+      var strDate = props.year + '-' + month + '-' + day;
+      var newDate = parseDate(strDate);
+
+      var numMissions = dateMap.get(strDate);
+      var newX = x(newDate);
+      var newY = y(numMissions);
+
+      // Remove line
+      svg.selectAll('.animated-line').remove();
+
+      // redraw animated line and circle
+      svg
+        .append('line')
+        .attr('class', 'animated-line')
+        .style('stroke', '#c5c5c5')
+        .style('stroke-dasharray', '3,3')
+        .style('opacity', 1)
+        .attr('x1', newX)
+        .attr('y1', height)
+        .attr('x2', newX)
+        .attr('y2', newY);
+
+      // draw circle
+      svg
+        .append('circle')
+        .attr('class', 'animated-line')
+        .style('fill', '#4800ff')
+        .style('stroke', '#4800ff')
+        .style('opacity', 0.7)
+        .attr('cx', newX)
+        .attr('cy', newY)
+        .attr('r', 3);
+
+      // draw text
+      // svg
+      //   .append('text')
+      //   .attr('class', 'animated-line')
+      //   .attr('x', newX + 3)
+      //   .attr('y', newY - 5)
+      //   .text(numMissions + ' missions');
+    }
+    this.drawLine = drawLine;
   }
 
   update(props, oldProps) {
     this.play = props.play;
     if (!this.play) {
       this.svg.select('rect').style('pointer-events', 'none');
+
+      this.drawLine(props);
     } else {
+      // delete line that was there before
+      this.svg.selectAll('.animated-line').remove();
       this.svg.select('rect').style('pointer-events', 'all');
     }
   }
