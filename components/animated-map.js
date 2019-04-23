@@ -200,7 +200,7 @@ class App extends Component {
       data: daysData,
       pickable: false,
       // color: ,
-      getColor: d => [77, 0, 255],
+      getColor: d => [255, 229, 51],
       // radiusScale: 10000,
       getPosition: d => [d.lon, d.lat],
       getRadius: d => 2,

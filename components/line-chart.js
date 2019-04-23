@@ -35,6 +35,7 @@ class LineChart extends D3Component {
 
     let x = d3.scaleTime().range([0, width]);
     let y = d3.scaleLinear().range([height, 0]);
+    let r = d3.scaleSqrt().range([2, 10]);
     var loessScale = d3
       .scaleLinear()
       .domain([-1.5, 1.5])
@@ -70,7 +71,7 @@ class LineChart extends D3Component {
             .attr('cx', mark)
             .attr('cy', y(props.loessFit[i]))
             .attr('fill', '#5DA391')
-            .attr('r', 5);
+            .attr('r', 6);
         }
 
         return mark;
@@ -87,11 +88,9 @@ class LineChart extends D3Component {
 
     var lineSvg = svg.append('g');
 
-    let focus = (this.focus = svg.append('g').style('display', 'none'));
-
     let dateMap = (this.dateMap = new Map());
 
-    d3.csv('static/data/date_counts.csv', function(error, data) {
+    d3.csv('static/data/date_counts.csv', (error, data) => {
       data.forEach(function(d) {
         d.formattedDate = parseDate(d.DATE);
         d.NUM_MISSIONS = +d.NUM_MISSIONS;
@@ -105,6 +104,12 @@ class LineChart extends D3Component {
         })
       );
       y.domain([
+        0,
+        d3.max(data, function(d) {
+          return d.NUM_MISSIONS;
+        })
+      ]);
+      r.domain([
         0,
         d3.max(data, function(d) {
           return d.NUM_MISSIONS;
@@ -137,14 +142,7 @@ class LineChart extends D3Component {
         .attr('transform', 'translate(0,' + height + ')')
         .call(xAxis);
 
-      // append circle
-      focus
-        .append('circle')
-        .attr('class', 'y')
-        .style('fill', '#4800ff')
-        .style('stroke', '#4800ff')
-        .style('opacity', 0.7)
-        .attr('r', 3);
+      let focus = (this.focus = svg.append('g').style('display', 'none'));
 
       svg
         .append('rect')
@@ -165,17 +163,28 @@ class LineChart extends D3Component {
       focus
         .append('line')
         .attr('class', 'x')
-        .style('stroke', '#c5c5c5')
+        .style('stroke', '#5DA391')
+        .style('stroke-width', 3)
         .style('stroke-dasharray', '3,3')
-        .style('opacity', 0.5)
+        .style('opacity', 1)
         .attr('y1', 0)
         .attr('y2', height);
 
+      // append circle
+      focus
+        .append('circle')
+        .attr('class', 'y')
+        .style('fill', 'rgb(255, 229, 51)')
+        .style('stroke', 'rgb(255, 229, 51)')
+        .style('opacity', 1)
+        .attr('r', 5);
       // place the value at the intersection
       focus
         .append('text')
         .attr('class', 'y1')
-        .style('opacity', 0.8)
+        .style('opacity', 1)
+        .style('font-size', 12)
+        .style('fill', '#fff')
         .attr('dx', 3)
         .attr('dy', '-.6em');
 
@@ -183,7 +192,8 @@ class LineChart extends D3Component {
       focus
         .append('text')
         .attr('class', 'y3')
-        .style('opacity', 0.8)
+        .style('opacity', 1)
+        .style('fill', '#fff')
         .attr('dx', 3)
         .attr('dy', '-1.5em');
 
@@ -210,6 +220,7 @@ class LineChart extends D3Component {
 
         focus
           .select('circle.y')
+          .attr('r', r(d.NUM_MISSIONS))
           .attr(
             'transform',
             'translate(' + x(d.formattedDate) + ',' + y(d.NUM_MISSIONS) + ')'
@@ -228,7 +239,7 @@ class LineChart extends D3Component {
           .select('text.y1')
           .attr(
             'transform',
-            'translate(' + x(d.formattedDate) + ',' + y(d.NUM_MISSIONS) + ')'
+            'translate(' + (x(d.formattedDate) + (d.NUM_MISSIONS < 1800 ? 0 : 10)) + ',' + (d.NUM_MISSIONS < 1800 ? y(d.NUM_MISSIONS) : 45) + ')'
           )
           .text(d.NUM_MISSIONS + ' ' + 'missions');
 
@@ -237,7 +248,7 @@ class LineChart extends D3Component {
           .select('text.y3')
           .attr(
             'transform',
-            'translate(' + x(d.formattedDate) + ',' + y(d.NUM_MISSIONS) + ')'
+            'translate(' + (x(d.formattedDate) + (d.NUM_MISSIONS < 1800 ? 0 : 10)) + ',' + (d.NUM_MISSIONS < 1800 ? y(d.NUM_MISSIONS) : 45) + ')'
           )
           .text(formatDate(d.formattedDate));
       }
@@ -269,7 +280,8 @@ class LineChart extends D3Component {
       svg
         .append('line')
         .attr('class', 'animated-line')
-        .style('stroke', '#c5c5c5')
+        .style('stroke', '#5DA391')
+        .style('stroke-width', 3)
         .style('stroke-dasharray', '3,3')
         .style('opacity', 1)
         .attr('x1', newX)
@@ -281,12 +293,12 @@ class LineChart extends D3Component {
       svg
         .append('circle')
         .attr('class', 'animated-line')
-        .style('fill', '#4800ff')
-        .style('stroke', '#4800ff')
-        .style('opacity', 0.7)
+        .style('fill', 'rgb(255, 229, 51)')
+        .style('stroke', 'rgb(255, 229, 51)')
+        .style('opacity', 1)
         .attr('cx', newX)
         .attr('cy', newY)
-        .attr('r', 3);
+        .attr('r', r(numMissions));
 
       // draw text
       // svg
