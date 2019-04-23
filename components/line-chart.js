@@ -5,13 +5,21 @@ const D3Component = require('idyll-d3-component');
 const d3 = require('d3');
 import { headlines } from './headline-data.js';
 
+// const science = require('science');
+// const loess = science.stats.loess().bandwidth(.2);
+
+const Loess = require('loess').default;
+console.log(Loess);
+const options = {span: 0.2, band: 0, degree: 'constant'};
+
+
 const size = 100;
 
 class LineChart extends D3Component {
   initialize(node, props) {
     this.play = props.play;
 
-    let svg = (this.svg = d3.select(node).append('svg'));
+    let svg = (this.svg = d3.select(node).append('svg').style('overflow', 'visible'));
     var margin = { top: 10, right: 0, bottom: 25, left: 0 },
       width = 1200 - margin.left - margin.right,
       height = 150 - margin.top - margin.bottom;
@@ -27,6 +35,7 @@ class LineChart extends D3Component {
 
     var x = d3.scaleTime().range([0, width]);
     var y = d3.scaleLinear().range([height, 0]);
+    var loessScale = d3.scaleLinear().domain([-1.5, 1.5]).range([height, 0]);
 
     // define axes
     var xAxis = d3.axisBottom(x).ticks(9);
@@ -34,7 +43,7 @@ class LineChart extends D3Component {
     // define line
     var valueLine = d3
       .line()
-      .x(function(d) {
+      .x(function(d, i) {
         // if date matches headline date, mark position on timeline
         let [dataYear, month, day] = d.DATE.split('-');
         dataYear = +dataYear;
@@ -57,8 +66,8 @@ class LineChart extends D3Component {
           svg
             .append('circle')
             .attr('cx', mark)
-            .attr('cy', height)
-            .attr('fill', 'red')
+            .attr('cy', y(props.loessFit[i]))
+            .attr('fill', '#5DA391')
             .attr('r', 5);
         }
 
@@ -103,6 +112,19 @@ class LineChart extends D3Component {
         .attr('class', 'line')
         .attr('d', valueLine(data));
 
+      const loessLine = d3
+      .line()
+      .x(function(d, i) {
+        return x(data[i].formattedDate);
+      })
+      .y(function(d, i) {
+        return y(d);
+      })
+
+      lineSvg
+          .append("path")
+          .attr('class', 'loess')
+          .attr("d", loessLine(props.loessFit));
       svg
         .append('g')
         .attr('class', 'x axis')
