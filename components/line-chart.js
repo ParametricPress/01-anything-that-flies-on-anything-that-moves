@@ -239,7 +239,13 @@ class LineChart extends D3Component {
           .select('text.y1')
           .attr(
             'transform',
-            'translate(' + (x(d.formattedDate) + (d.NUM_MISSIONS < 1800 ? 0 : 10)) + ',' + (d.NUM_MISSIONS < 1800 ? y(d.NUM_MISSIONS) : 45) + ')'
+            'translate(' +
+              (dataYear === 1973
+                ? x(d.formattedDate) - 80
+                : x(d.formattedDate) + (d.NUM_MISSIONS < 1800 ? 0 : 10)) +
+              ',' +
+              (d.NUM_MISSIONS < 1800 ? y(d.NUM_MISSIONS) : 45) +
+              ')'
           )
           .text(d.NUM_MISSIONS + ' ' + 'missions');
 
@@ -248,7 +254,13 @@ class LineChart extends D3Component {
           .select('text.y3')
           .attr(
             'transform',
-            'translate(' + (x(d.formattedDate) + (d.NUM_MISSIONS < 1800 ? 0 : 10)) + ',' + (d.NUM_MISSIONS < 1800 ? y(d.NUM_MISSIONS) : 45) + ')'
+            'translate(' +
+              (dataYear === 1973
+                ? x(d.formattedDate) - 115
+                : x(d.formattedDate) + (d.NUM_MISSIONS < 1800 ? 0 : 10)) +
+              ',' +
+              (d.NUM_MISSIONS < 1800 ? y(d.NUM_MISSIONS) : 45) +
+              ')'
           )
           .text(formatDate(d.formattedDate));
       }
