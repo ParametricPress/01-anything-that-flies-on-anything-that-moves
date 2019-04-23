@@ -8,7 +8,6 @@ import { headlines } from './headline-data.js';
 // const loess = science.stats.loess().bandwidth(.2);
 
 const Loess = require('loess').default;
-console.log(Loess);
 const options = { span: 0.2, band: 0, degree: 'constant' };
 
 const size = 100;
@@ -189,6 +188,8 @@ class LineChart extends D3Component {
         .attr('dy', '-1.5em');
 
       function mousemove() {
+        svg.selectAll('.animated-line').remove(); // on mousemove delete line
+
         var x0 = x.invert(d3.mouse(this)[0]),
           i = bisectDate(data, x0, 1),
           d0 = data[i - 1],
@@ -305,8 +306,6 @@ class LineChart extends D3Component {
 
       this.drawLine(props);
     } else {
-      // delete line that was there before
-      this.svg.selectAll('.animated-line').remove();
       this.svg.select('rect').style('pointer-events', 'all');
     }
   }
