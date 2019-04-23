@@ -5,6 +5,7 @@ class PlayButton extends React.Component {
     super(props);
     this.date = new Date(`${props.year}-${props.month}-${props.day}`);
   }
+
   play() {
     this.date = new Date(
       `${this.props.year}-${this.props.month}-${this.props.day}`
@@ -18,15 +19,27 @@ class PlayButton extends React.Component {
     if (this.props.play) {
       this.interval = setInterval(() => {
         this.date.setDate(this.date.getDate() + 1);
-        // TODO - check if we've gone out of range
-        // console.log(this.date);
-        // console.log(this.date.getDate(), this.date.getMonth() + 1, this.date.getFullYear())
 
-        this.props.updateProps({
-          day: this.date.getDate(),
-          month: this.date.getMonth() + 1,
-          year: this.date.getFullYear()
-        });
+        // out of range
+        if (
+          this.date.getDate() >= 1 &&
+          this.date.getMonth() + 1 >= 9 &&
+          this.date.getFullYear() === 1973
+        ) {
+          this.props.updateProps({
+            day: 1,
+            month: 10,
+            year: 1965,
+            play: true
+          });
+          clearInterval(this.interval);
+        } else {
+          this.props.updateProps({
+            day: this.date.getDate(),
+            month: this.date.getMonth() + 1,
+            year: this.date.getFullYear()
+          });
+        }
       }, 250);
     } else {
       clearInterval(this.interval);

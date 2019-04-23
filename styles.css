@@ -67,10 +67,9 @@ path {
 }
 path.loess {
   stroke-width: 1;
-  stroke-dasharray: 5,5;
+  stroke-dasharray: 5, 5;
   stroke: #c5c5c5;
 }
-
 
 .axis line {
   display: none;
@@ -98,6 +97,7 @@ path.loess {
 .map-interactive text.y3 {
   fill: #fff;
   text-shadow: 2px 2px 2px #222;
+  font-size: 1em;
 }
 .map-interactive-header {
   display: flex;
