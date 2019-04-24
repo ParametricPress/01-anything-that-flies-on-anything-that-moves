@@ -157,7 +157,6 @@ class LineChart extends D3Component {
           focus.style('display', 'none');
         })
         .on('mousemove', mousemove);
-      // .on('click', mouseclick);
 
       // add x dashed line
       focus
@@ -224,7 +223,8 @@ class LineChart extends D3Component {
           .attr(
             'transform',
             'translate(' + x(d.formattedDate) + ',' + y(d.NUM_MISSIONS) + ')'
-          );
+          )
+          .style('cursor', 'pointer');
 
         focus
           .select('.x')
@@ -311,14 +311,6 @@ class LineChart extends D3Component {
         .attr('cx', newX)
         .attr('cy', newY)
         .attr('r', r(numMissions));
-
-      // draw text
-      // svg
-      //   .append('text')
-      //   .attr('class', 'animated-line')
-      //   .attr('x', newX + 3)
-      //   .attr('y', newY - 5)
-      //   .text(numMissions + ' missions');
     }
     this.drawLine = drawLine;
   }
@@ -327,7 +319,6 @@ class LineChart extends D3Component {
     this.play = props.play;
     if (!this.play) {
       this.svg.select('rect').style('pointer-events', 'none');
-
       this.drawLine(props);
     } else {
       this.svg.select('rect').style('pointer-events', 'all');
