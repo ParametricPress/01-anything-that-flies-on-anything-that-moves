@@ -11,6 +11,17 @@ export let headlines = [
     endYear: 1965
   },
   {
+    headline: 'President Johnson Halts Air Strikes Against North Vietnam',
+    paragraph:
+      'In an early attempt to negotiate with the North Vietnamese, Johnson calls for a cessation of bombing missions against North Vietnam. The database records only 10 missions being flown in total that day over Southeast Asia. The attempt does not succeed and bombings resume afterward.',
+    startDay: 25,
+    startMonth: 12,
+    startYear: 1965,
+    endDay: 5,
+    endMonth: 1,
+    endYear: 1966
+  },
+  {
     headline: 'President Johnson Calls for Halt to Bombings in Address',
     paragraph:
       'President Johnson calls for a partial halt to bombing operations in Southeast Asia in a televised address, and announces his decision to not pursue a second term. Bombings in North Vietnam noticeably drop while missions are redirected to the Laotian panhandle.',
@@ -54,6 +65,7 @@ export let headlines = [
     endMonth: 1,
     endYear: 1969
   },
+
   {
     headline: 'Nixon Orders Secret Carpet Bombings Over Cambodia',
     paragraph:
@@ -64,6 +76,17 @@ export let headlines = [
     endDay: 31,
     endMonth: 3,
     endYear: 1969
+  },
+  {
+    headline: 'Nixon Finally Admits US Involvement in Laos',
+    paragraph:
+      'In his address, Nixon states US support for Laos independence, neutrality, and peace, but avoids mentioning bombs throughout the entire speech. Known as the "Secret War", US strikes in Laos began in 1964 and often were diverted targets from North Vietnam. "Operation Barrel Roll" supported the Royal Lao Government against the communist Pathet Lao. However, during its run, the missions left behind destroyed villages and hundreds of thousands of displaced civilians.',
+    startDay: 6,
+    startMonth: 3,
+    startYear: 1970,
+    endDay: 17,
+    endMonth: 3,
+    endYear: 1970
   },
   {
     headline: 'Prince Sihanouk Falls, Lon Nol Rises',
@@ -91,7 +114,7 @@ export let headlines = [
   {
     headline: 'Operation Menu Ends; Operation Freedom Deal Begins',
     paragraph:
-      'Operation Menu ends in late May, culminating in 3,857 sorties flown and an estimated 108,823 tons of bombs dropped on Cambodia. Operation Freedom Deal picks up where Operation Menu leaves off and expands air warfare in Cambodia. The operation—which is aimed to provide support for Lon Nol against the rising Khmer Rouge—is supposedly confined to a 48 km region. However, records show that 3,634 sorties are flown outside of this boundary line.',
+      'Operation Menu ends in late May, culminating in 3,857 sorties flown and an estimated 108,823 tons of bombs dropped on Cambodia. Operation Freedom Deal picks up where Operation Menu leaves off and expands air warfare in Cambodia. The operation—which acts as support for Lon Nol against the rising Khmer Rouge—is confined to a 48 km region. However, records show that 3,634 sorties are flown outside of this boundary line.',
     startDay: 19,
     startMonth: 5,
     startYear: 1970,
@@ -100,14 +123,80 @@ export let headlines = [
     endYear: 1970
   },
   {
+    headline: 'Anything that Flies, On Anything that Moves',
+    paragraph:
+      'Kissinger receives orders from Nixon to carry out a mass bombing campaign over Cambodia. The orders include instructions to "hit everything there" and complaints that the Air Force is "not imaginative" enough. Frustrated with the apparent inefficacy of the bombings in rooting out the North Vietnamese, Nixon opts to send them further into Cambodia and demands, "They have got to go in there and I mean really go in." Kissinger relays the orders to General Haig on the same day.',
+    startDay: 9,
+    startMonth: 12,
+    startYear: 1970,
+    endDay: 31,
+    endMonth: 12,
+    endYear: 1970
+  },
+  {
     headline: 'Nixon Resumes Bombing in North Vietnam; Laos Bombing Decreases',
     paragraph:
-      'In a transcript from the President to Attorney General John Mitchell, Nixon discusses resuming mass B-52 strikes over North Vietnam. "The bastards have never been bombed like they\'re going to be bombed this time,\' Nixon says on tape."',
+      'In a transcript from the President to Attorney General John Mitchell, Nixon discusses resuming mass B-52 strikes over North Vietnam. "The bastards have never been bombed like they\'re going to be bombed this time," Nixon says on tape.',
     startDay: 4,
     startMonth: 4,
     startYear: 1972,
     endDay: 31,
     endMonth: 4,
     endYear: 1972
+  },
+  {
+    headline: 'US Carpet Bombs North Vietnam in "Christmas Bombings"',
+    paragraph:
+      'In an attempt to get North Vietnam return to the bargaining table, Nixon executes a highly publicized bombing of North Vietnam which becomes known as the "Christmas Bombings" or Operation Linebacker II. Over the course of 11 days, the US sends B-52s and heavily bombs the citizens of North Vietnam, only stopping to briefly suspend most operations on Christmas Day.',
+    startDay: 18,
+    startMonth: 12,
+    startYear: 1972,
+    endDay: 29,
+    endMonth: 12,
+    endYear: 1972
+  },
+  {
+    headline: 'Paris Peace Accords Signed; Ceasefire Agreed',
+    paragraph:
+      'North Vietnam and South Vietnam are forced by the US to sign the Paris Peace Accords, resulting in a halt of North Vietnam bombings. Shortly after, bombings directed toward Laos sharply increase with an all-time high of about 55,000 tons in February alone.',
+    startDay: 27,
+    startMonth: 1,
+    startYear: 1973,
+    endDay: 20,
+    endMonth: 2,
+    endYear: 1973
+  },
+  {
+    headline: 'Operation Barrel Roll Ends',
+    paragraph:
+      'After nine years, the largely secret war in Laos ends. With over two million bombs dropped, Laos becomes the most heavily bombed country in the world per capita. Cease fire takes into effect on February 22.',
+    startDay: 22,
+    startMonth: 2,
+    startYear: 1973,
+    endDay: 5,
+    endMonth: 3,
+    endYear: 1973
+  },
+  {
+    headline: 'Most Intensive Phase of Cambodia Bombings Begin',
+    paragraph:
+      'In a last-ditch effort to stop the Khmer Rouge from taking over Phnom Penh, the US uses leftover airpower to bomb Cambodia. This upward increase comes after missions cease in North Vietnam and slow down in South Vietnam and Laos. Researchers believe the bombs are redirected to Cambodia after the Paris Peace Accords.',
+    startDay: 9,
+    startMonth: 3,
+    startYear: 1973,
+    endDay: 5,
+    endMonth: 4,
+    endYear: 1973
+  },
+  {
+    headline: 'Operation Freedom Deal in Cambodia Ends',
+    paragraph:
+      'After months of extensive bombing, Operation Freedom Deal ends.  Overall, the bombings are considered a tactical failure and instead are used as propaganda fodder by the Khmer Rouge to recruit members. Previous estimates by Kiernan state that between 50,000 and 150,000 civilians are killed during the campaigns in Cambodia; however, with the updated estimates, he suggests that the figures are much higher.',
+    startDay: 15,
+    startMonth: 8,
+    startYear: 1973,
+    endDay: 31,
+    endMonth: 8,
+    endYear: 1973
   }
 ];
