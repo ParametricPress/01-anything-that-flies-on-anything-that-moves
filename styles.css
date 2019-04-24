@@ -141,6 +141,10 @@ path.loess {
   font-size: 18px;
 }
 
+.mapboxgl-ctrl-attrib .mapbox-improve-map {
+  display: none;
+}
+
 @media all and (max-width: 1000px) {
   .map-interactive-header {
     padding: 0 1em;

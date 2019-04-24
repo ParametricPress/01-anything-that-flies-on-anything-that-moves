@@ -40,7 +40,7 @@ class PlayButton extends React.Component {
             year: this.date.getFullYear()
           });
         }
-      }, 250);
+      }, 100);
     } else {
       clearInterval(this.interval);
     }

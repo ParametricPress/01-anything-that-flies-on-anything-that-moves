@@ -141,62 +141,19 @@ class App extends Component {
     }
   }
 
-  // componentWillReceiveProps(newProps) {
-  //   // if (newProps.focus !== this.props.focus) {
-  //   //   if (newProps.focus) {
-  //   //     this.setState({
-  //   //       viewport: Object.assign({}, this.state.viewport, this.getViewport(newProps.focus) || {})
-  //   //     })
-  //   //   } else {
-  //   //     this.setState({
-  //   //       viewport: Object.assign({}, this.state.viewport, initialViewport)
-  //   //     })
-  //   //   }
-  //   // } else if (newProps.stepFocus !== this.props.stepFocus) {
-  //   //   if (newProps.stepFocus) {
-  //   //     this.setState({
-  //   //       viewport: Object.assign({}, this.state.viewport, this.getViewport(newProps.stepFocus) || {})
-  //   //     })
-  //   //   } else {
-  //   //     this.setState({
-  //   //       viewport: Object.assign({}, this.state.viewport, initialViewport)
-  //   //     })
-  //   //   }
-  //   // }
-  // }
-
   getLayers() {
-    console.log('getting layers');
     const { day, month, year } = this.props;
     let daysData;
     try {
       daysData = this.data[year][month][day];
     } catch (e) {
-      console.log('no data for ', year, month, day, ':(');
       return [];
     }
-    // // console.log('daysData', daysData);
-    // const pointData = daysData
-    //   .map((d, i) => {
-    //     console.log([d.lon, d.lat]);
-    //     const ret = {
-    //       coordinates: [d.lon, d.lat],
-    //       color: [239, 239, 239],
-    //       opacity: 1
-    //     }
-    //     if (i < 5) {
-    //       console.log(ret);
-    //     }
-    //     return ret;
-    //   })
-    // // }
-
-    // console.log('pointData', pointData);
 
     const points = new ScatterplotLayer({
       id: 'points',
       strokeWidth: 1,
-      opacity: 1,
+      opacity: 0.5,
       data: daysData,
       pickable: false,
       // color: ,

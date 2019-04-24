@@ -20,7 +20,7 @@ class LineChart extends D3Component {
       .select(node)
       .append('svg')
       .style('overflow', 'visible'));
-    var margin = { top: 10, right: 0, bottom: 25, left: 0 };
+    var margin = { top: 10, right: 10, bottom: 25, left: 10 };
     let width = 1200 - margin.left - margin.right;
     let height = 150 - margin.top - margin.bottom;
 
