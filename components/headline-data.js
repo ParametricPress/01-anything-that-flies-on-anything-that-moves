@@ -101,9 +101,9 @@ export let headlines = [
   },
   {
     headline:
-      'Nixon Orders a Joint US and South Vietnamese Attack in Cambodia; Protests Erupt in Response',
+      'Nixon Orders a Joint US and South Vietnamese Attack in Cambodia; Four Kent State Students Slain During Protest',
     paragraph:
-      'After the fall of Prince Sihanouk, Nixon authorizes a joint invasion into Cambodia and announces the "incursion" in a televised address. The public announcement sparks a nationwide protest, despite Johnson\'s secret involvement with Cambodia years before. Days after the address, the Kent State shootings occur.',
+      'After the fall of Prince Sihanouk, Nixon authorizes a joint invasion into Cambodia and announces the "incursion" in a televised address. The public announcement sparks a nationwide protest, despite Johnson\'s secret involvement with Cambodia years before. Days after the address, the Kent State shootings occur and four students are killed.',
     startDay: 30,
     startMonth: 4,
     startYear: 1970,
@@ -175,6 +175,17 @@ export let headlines = [
     startYear: 1972,
     endDay: 31,
     endMonth: 4,
+    endYear: 1972
+  },
+  {
+    headline: 'FBI Launches Investigation of Watergate Break-Ins',
+    paragraph:
+      "Five burglars are arrested at the Democratic National Committee headquarters held in the Watergate hotel. The men are caught with stolen documents and surveillance equipment, which launches an investigation of possible ties to Nixon's reelection campaign. Nixon denies involvement with the break-in and subsequently wins the 1972 election. It is only until 1974 that Nixon's tapes are released under United States v. Nixon and his crimes are revealed.",
+    startDay: 17,
+    startMonth: 6,
+    startYear: 1972,
+    endDay: 16,
+    endMonth: 7,
     endYear: 1972
   },
   {

@@ -5,6 +5,7 @@
 [var name:day value:1/]
 [var name:month value:10 /]
 [var name:year value:1965/]
+[var name:totalMissions value:355 /] // start num missions
 
 [data name:"loessFit" source:"loess.json" /]
 
@@ -33,12 +34,15 @@ Much of the publicity surrounding US bombing campaigns during the Vietnam War hi
 These records show that from October 1965 and August 1973, the United States launched an average of about 924
 bombing missions per day, accumulating over two million in total in
 the 8 year span. Each of these potentially deadly strikes are presented
-in the visualization below. Note that data from 1974 and 1975 are ommitted due to missing coordinates and lack of continuity between years.
+in the visualization below. Note that data from 1974 and 1975 are ommited due to missing coordinates and lack of continuity between years.
 
 [div fullWidth:true className:"map-interactive"]
 
   [div className:"map-interactive-header"]
-    [Date day:day month:month year:year /]
+    [div]
+      [Date day:day month:month year:year /]
+      
+    [/div]
     [PlayButton day:day month:month year:year play:play /]
   [/div]
 
