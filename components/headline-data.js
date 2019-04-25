@@ -11,6 +11,17 @@ export let headlines = [
     endYear: 1965
   },
   {
+    headline: 'Operation Tiger Hound Begins in Laos',
+    paragraph:
+      'Operation Tiger Hound begins alongside two other operations well underway in Laos: Operation Barrel Roll and Operation Steel Tiger. Largely unacknowledged by the US, strikes in Laos began in 1964 and often were diverted targets from North Vietnam. “Operation Barrel Roll” supported the Royal Lao Government against the communist Pathet Lao, with the majority of battles taking place in Northern Laos’ Plain of Jars. In return, Prince Phouma of Laos allowed the US to bomb the southeastern portion of the country along the Ho Chi Minh Trail where both Tiger Hound and Steel Tiger take place.',
+    startDay: 6,
+    startMonth: 12,
+    startYear: 1965,
+    endDay: 24,
+    endMonth: 12,
+    endYear: 1965
+  },
+  {
     headline: 'President Johnson Halts Air Strikes Against North Vietnam',
     paragraph:
       'In an early attempt to negotiate with the North Vietnamese, Johnson calls for a cessation of bombing missions against North Vietnam. The database records only 10 missions being flown in total that day over Southeast Asia. The attempt does not succeed and bombings resume afterward.',
@@ -73,20 +84,9 @@ export let headlines = [
     startDay: 18,
     startMonth: 3,
     startYear: 1969,
-    endDay: 31,
-    endMonth: 3,
+    endDay: 15,
+    endMonth: 4,
     endYear: 1969
-  },
-  {
-    headline: 'Nixon Finally Admits US Involvement in Laos',
-    paragraph:
-      'In his address, Nixon states US support for Laos independence, neutrality, and peace, but avoids mentioning bombs throughout the entire speech. Known as the "Secret War", US strikes in Laos began in 1964 and often were diverted targets from North Vietnam. "Operation Barrel Roll" supported the Royal Lao Government against the communist Pathet Lao. However, during its run, the missions left behind destroyed villages and hundreds of thousands of displaced civilians.',
-    startDay: 6,
-    startMonth: 3,
-    startYear: 1970,
-    endDay: 17,
-    endMonth: 3,
-    endYear: 1970
   },
   {
     headline: 'Prince Sihanouk Falls, Lon Nol Rises',
@@ -180,7 +180,7 @@ export let headlines = [
   {
     headline: 'US Carpet Bombs North Vietnam in "Christmas Bombings"',
     paragraph:
-      'In an attempt to get North Vietnam to return to the bargaining table, Nixon executes a highly publicized bombing of North Vietnam which becomes known as the "Christmas Bombings" or Operation Linebacker II. Over the course of 11 days, the US sends B-52s to heavily bomb the citizens of North Vietnam, only stopping to briefly suspend most operations on Christmas Day.',
+      'In an attempt to get North Vietnam to return to the bargaining table, Nixon executes a highly publicized bombing of North Vietnam which becomes known as the "Christmas Bombings" or Operation Linebacker II. Over the course of 11 days, the US sends B-52s to heavily bomb the citizens of North Vietnam, only stopping to briefly suspend most operations on Christmas Day. It is reported that over 1,600 civilians died.',
     startDay: 18,
     startMonth: 12,
     startYear: 1972,
