@@ -1,5 +1,7 @@
 [meta title:"SE Asia Bombs" description:"TK Description" /]
 
+[var name:"parametricSlug" value:"anything-that-flies-anything-that-moves" /]
+
 // Variables
 [var name:play value:true /] // controls state of autoplay
 [var name:day value:1/]
@@ -64,6 +66,7 @@ in the visualization below. Note that data from 1974 and 1975 are ommited due to
 
 Here is the impact and breakdown of all bombing missions on each country:
 
+
 ## Laos: > 2,000,000 tons
 
 Laos is the heaviest bombed country per capita in the world. For nine years, the US dropped an equivalent of a planeload of bombs every eight minutes around the clock. Despite past government claims that the bombings were done over rural, unpopulated areas, these missions destroyed many villages, and displaced, maimed, and killed many Laotian civilians. It is estimated that 30 percent of these bombs—the most common and dangerous being the cluster bomb—remain undetonated throughout the country today.
@@ -84,6 +87,10 @@ The Journal of Vietnamese Studies also calculates that South Vietnam suffered th
 
 ## A Forgotten Legacy
 
+[Aside]
+  [Recirc slug:parametricSlug /]
+[/Aside]
+
 By the end of the war, the US is estimated to have dropped over seven million tons of bombs over Southeast Asia. To put that into context, that is the equivalent of around five times the weight of the Twin Towers together and at least three times the amount of tonnage dropped during World War II. The tonnage of bombs dropped over Laos—a country about the size of Utah—is roughly the same as the total tonnage of bombs dropped during the entire second World War.
 
 The leftover bombs not only serve as a historical reminders but obstacles for the Southeast Asian countries. Decades after the war, unexploded bombs still kill and maim citizens. The bombs also prevent cultivation of rural land. In Laos’ case, undetonated ordinance contributes to high poverty levels in many of the country’s poorest districts. It was only until 2000 when President Clinton released records of these bombings to help aid with the removal of the unexploded bombs. As of 2016, less than one percent of bombs have been disposed.
@@ -94,12 +101,14 @@ US efforts to oust communist threats with mass carpet bombing did not work. In m
 
 [AuthorBio]
 
-**Megan Vo** is an undergraduate at the University of Washington studying computer science. 
+**Megan Vo** is an undergraduate at the University of Washington studying computer science.
 
 Edited by Victoria Uren and Matthew Conlen.
 
 [/AuthorBio]
 
-[NextArticle fullWidth:true /]
+[NextArticle slug:parametricSlug fullWidth:true /]
 
 [Footer fullWidth:true /]
+
+[Analytics google:"UA-139053456-1" tag:parametricSlug /]
