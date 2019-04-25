@@ -10,6 +10,7 @@
 [var name:totalMissions value:355 /] // start num missions
 
 [data name:"loessFit" source:"loess.json" /]
+[data name:"runSum" source:"running_sum.csv" /]
 
 [Nav fullWidth:true /]
 
@@ -43,7 +44,7 @@ in the visualization below. Note that data from 1974 and 1975 are ommited due to
   [div className:"map-interactive-header"]
     [div]
       [Date day:day month:month year:year /]
-      
+      [TotalMissions data:runSum day:day month:month year:year /]
     [/div]
     [PlayButton day:day month:month year:year play:play /]
   [/div]

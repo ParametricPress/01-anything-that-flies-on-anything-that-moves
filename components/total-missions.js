@@ -1,32 +1,21 @@
 const React = require('react');
-const Papa = require('papaparse');
 
 class TotalMissions extends React.Component {
   constructor(props) {
     super(props);
     this.map = new Map();
 
-    Papa.parse(`static/data/by-year/${year}.csv`, {
-      // worker: true,
-      delimiter: ',',
-      download: true,
-      fastMode: true,
-      step: results => {
-        results.data.forEach(d => {
-          let [dataYear, month, day] = d[0].split('-');
-          dataYear = +dataYear;
-          month = +month;
-          day = +day;
-
-          map.set([day, month, dataYear], 0);
-        });
-      }
+    props.data.forEach(obj => {
+      this.map.set(obj.DATE, obj.TOTAL_MISSIONS);
     });
   }
 
   render() {
     const { day, month, year } = this.props;
-    return <div>hi</div>;
+    var strDate = month + '/' + day + '/' + String(year).substring(2);
+    var numMissions = this.map.get(strDate);
+    var formatNum = String(numMissions).replace(/(.)(?=(\d{3})+$)/g, '$1,');
+    return <div>{formatNum + ' Total Bombing Missions'}</div>;
   }
 }
 
