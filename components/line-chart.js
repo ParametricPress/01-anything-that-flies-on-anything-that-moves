@@ -44,6 +44,8 @@ class LineChart extends D3Component {
     // define axes
     var xAxis = d3.axisBottom(x).ticks(9);
 
+    drawLegend();
+
     // define line
     var valueLine = d3
       .line()
@@ -88,6 +90,7 @@ class LineChart extends D3Component {
 
     var lineSvg = svg.append('g');
 
+    // Maps dates to num missions
     let dateMap = (this.dateMap = new Map());
 
     d3.csv('static/data/date_counts.csv', (error, data) => {
@@ -265,6 +268,43 @@ class LineChart extends D3Component {
           .text(formatDate(d.formattedDate));
       }
     });
+
+    function drawLegend() {
+      svg
+        .append('g')
+        .attr('class', 'legend')
+        .append('circle')
+        .attr('cx', width - 100)
+        .attr('cy', 10)
+        .attr('fill', '#5DA391')
+        .attr('r', 4);
+
+      svg
+        .select('.legend')
+        .append('circle')
+        .attr('cx', width - 100)
+        .attr('cy', 25)
+        .attr('fill', 'pink')
+        .attr('r', 4);
+
+      svg
+        .select('.legend')
+        .append('text')
+        .attr('x', width - 93)
+        .attr('y', 15)
+        .text('Bombing Related Events')
+        .attr('fill', 'white')
+        .style('font-size', '0.4em');
+
+      svg
+        .select('.legend')
+        .append('text')
+        .attr('x', width - 93)
+        .attr('y', 30)
+        .text('Events in the US')
+        .attr('fill', 'white')
+        .style('font-size', '0.4em');
+    }
 
     // Given current props of month, day, year,
     // draws line on timeline corresponding to current date
