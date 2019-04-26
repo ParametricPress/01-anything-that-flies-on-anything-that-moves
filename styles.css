@@ -90,6 +90,18 @@ path.loess {
   margin-top: 2em;
   margin-bottom: 1em;
 }
+.map-interactive button {
+  background: #FFE533;
+  color: #222;
+  transition: transform 0.25s;
+  width: 115px;
+}
+.map-interactive button.playing {
+  background: #c5c5c5;
+}
+.map-interactive button:active {
+  transform: scale(0.95);
+}
 .map-interactive text {
   fill: #c5c5c5;
 }
@@ -106,6 +118,8 @@ path.loess {
   justify-content: space-between;
   align-items: center;
   padding: 0 50px;
+  line-height: 22px;
+  font-weight: 400;
 }
 .map-interactive-content {
   display: flex;
@@ -131,26 +145,27 @@ path.loess {
   font-family: 'Graphik Web';
   font-weight: bold;
   line-height: 1.33;
-  font-size: 24px;
-  margin-bottom: 0.5em;
-  max-width: 500px;
+  font-size: 28px;
+  /* max-width: 400px; */
 }
 .headline-paragraph {
   font-family: 'Graphik Web';
-  font-weight: 500;
+  font-weight: 400;
   line-height: 24px;
   font-size: 18px;
+}
+.headline-title-date {
+  font-size: 18px;
+  color: #7E7E7E;
 }
 
 .mapboxgl-ctrl-attrib .mapbox-improve-map {
   display: none;
 }
 
-.caption {
-  line-height: 1.2;
-  font-size: 0.8em;
-  color: gray;
-  margin-bottom: 2em;
+.parametric-caption {
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 @media all and (max-width: 1000px) {
@@ -159,4 +174,9 @@ path.loess {
   }
   .map-interactive-content {
   }
+  .parametric-caption {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
 }

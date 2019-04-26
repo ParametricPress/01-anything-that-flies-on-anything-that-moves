@@ -110,15 +110,20 @@ class HeadlineItem extends React.Component {
     return (
       <div className={this.props.fade ? 'faded' : 'active'} {...props}>
         <div className='headline-title'>
+          <div className="headline-title-date">
           {item === null
             ? ''
             : item.startMonth +
               '/' +
               item.startDay +
               '/' +
-              item.startYear +
-              ' - ' +
-              item.headline}
+              item.startYear}
+          </div>
+          <div>
+            {item === null
+              ? ''
+              : item.headline}
+          </div>
         </div>
         <div className='headline-paragraph'>
           {item === null ? '' : item.paragraph}

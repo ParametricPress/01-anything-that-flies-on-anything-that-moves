@@ -65,11 +65,11 @@ in the visualization below with teal events relating to the bombings. Pink event
   [/div]
 
 [/div]
-[div fullWidth:true className:"caption" ]
-[strong]Data Breakdown: [/strong]Though many US allies (including South Vietnam) were also involved in the bombings, data were filtered for kinetic missions flown by the United States to pinpoint a topic of interest. A large majority of the bombing records were carried out by US forces. However, it should be acknowledged that this data and visualization only show a portion of the war. 
+[caption fullWidth:true ]
+[strong]Data Breakdown: [/strong]Though many US allies (including South Vietnam) were also involved in the bombings, data were filtered for kinetic missions flown by the United States to pinpoint a topic of interest. A large majority of the bombing records were carried out by US forces. However, it should be acknowledged that this data and visualization only show a portion of the war.
 
 Records labeled as air-to-air combat missions in the original records were also not included in the visualization. It should be noted that US involvement in Southeast Asia started before October 1965 and did not fully end in August 1973, but continuous data are only available for this timeframe. Lastly, research analysis of this database suggests that many of the records are either falsified, missing, or corrupt, and thus must be regarded cautiously.
-[/div]
+[/caption]
 
 
 Here is the impact and breakdown of all bombing missions on each country:

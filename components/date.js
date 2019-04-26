@@ -22,8 +22,8 @@ class Date extends React.Component {
   render() {
     const { day, month, year } = this.props;
     return (
-      <div>
-        {`${months[parseInt(month - 1)]} ${day} ${year}`}
+      <div style={{fontWeight: 'bold'}}>
+        {`${months[parseInt(month - 1)]} ${day}, ${year}`}
       </div>
     );
   }
