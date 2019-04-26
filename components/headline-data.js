@@ -57,7 +57,7 @@ export let headlines = [
   {
     headline: 'Johnson Calls for Complete Halt of North Vietnam Bombings',
     paragraph:
-      'Due to pressure from home opposition, Johnson attempts to bring North Vietnam to the bargaining table by halting bombing operations in the area. All the leftover available sorties originally destined for North Vietnam divert to South Vietnam, the Ho Chi Minh Trail, and Laos, which sees a sharp increase in bombing points. This secret redirection to Laos allows the US to avoid political scrutiny. \n Over the course of the entire year, data show that more than 200 bombings missions are flown to Laos on average per day.',
+      'Due to pressure from home opposition, Johnson attempts to bring North Vietnam to the bargaining table by halting bombing operations in the area. All the leftover available sorties originally destined for North Vietnam divert to South Vietnam, the Ho Chi Minh Trail, and Laos, which sees a sharp increase in bombing points. This secret redirection to Laos allows the US to avoid political scrutiny.',
     startDay: 11,
     startMonth: 11,
     startYear: 1968,
