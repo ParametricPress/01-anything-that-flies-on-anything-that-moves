@@ -70,7 +70,7 @@ class LineChart extends D3Component {
             .append('circle')
             .attr('cx', mark)
             .attr('cy', y(props.loessFit[i]))
-            .attr('fill', '#5DA391')
+            .attr('fill', match[0].us ? 'pink' : '#5DA391')
             .attr('r', 6);
         }
 

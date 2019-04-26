@@ -24,12 +24,34 @@ export let headlines = [
   {
     headline: 'President Johnson Halts Air Strikes Against North Vietnam',
     paragraph:
-      'In an early attempt to negotiate with the North Vietnamese, Johnson calls for a cessation of bombing missions against North Vietnam. The database records only 10 missions being flown in total that day over Southeast Asia. The attempt does not succeed and bombings resume afterward.',
+      'In an early attempt to negotiate with the North Vietnamese, Johnson calls for a cessation of bombing missions against North Vietnam. The database records only 10 missions being flown in total that day over Southeast Asia. The attempt does not succeed.',
     startDay: 25,
     startMonth: 12,
     startYear: 1965,
-    endDay: 20,
+    endDay: 25,
     endMonth: 1,
+    endYear: 1966
+  },
+  {
+    headline: 'Johnson Resumes Bombings of North Vietnam',
+    paragraph:
+      'After 37 days, Johnson announces a resumption of bombing missions in North Vietnam. In the broadcast, Johnson claims that no bombs had been dropped in the area during the 37 day period and that no diplomatic advances had been reached. He states that while there is no peace, the US will continue fighting North Vietnam.',
+    startDay: 31,
+    startMonth: 1,
+    startYear: 1966,
+    endDay: 10,
+    endMonth: 3,
+    endYear: 1966
+  },
+  {
+    headline: 'US Bombs Hanoi and Hai Phong For the First Time',
+    paragraph:
+      'The US bombs facilities containing petroleum near Hai Phong and North Vietnam’s capital Hanoi. This is met with unfavorable reactions from many countries and leaders around the world as the bombings are seen as a pathway to escalation.',
+    startDay: 29,
+    startMonth: 6,
+    startYear: 1966,
+    endDay: 28,
+    endMonth: 7,
     endYear: 1966
   },
   {
@@ -61,7 +83,7 @@ export let headlines = [
     startDay: 11,
     startMonth: 11,
     startYear: 1968,
-    endDay: 1,
+    endDay: 11,
     endMonth: 12,
     endYear: 1968
   },
@@ -84,7 +106,7 @@ export let headlines = [
     startDay: 18,
     startMonth: 3,
     startYear: 1969,
-    endDay: 15,
+    endDay: 30,
     endMonth: 4,
     endYear: 1969
   },
@@ -118,7 +140,7 @@ export let headlines = [
     startDay: 19,
     startMonth: 5,
     startYear: 1970,
-    endDay: 1,
+    endDay: 25,
     endMonth: 6,
     endYear: 1970
   },
@@ -129,9 +151,9 @@ export let headlines = [
     startDay: 9,
     startMonth: 12,
     startYear: 1970,
-    endDay: 31,
-    endMonth: 12,
-    endYear: 1970
+    endDay: 9,
+    endMonth: 1,
+    endYear: 1971
   },
   {
     headline: 'November Records Missing Due to Damage',
@@ -162,8 +184,8 @@ export let headlines = [
     startDay: 4,
     startMonth: 5,
     startYear: 1968,
-    endDay: 30,
-    endMonth: 5,
+    endDay: 15,
+    endMonth: 6,
     endYear: 1968
   },
   {
@@ -186,7 +208,8 @@ export let headlines = [
     startYear: 1972,
     endDay: 16,
     endMonth: 7,
-    endYear: 1972
+    endYear: 1972,
+    us: true
   },
   {
     headline: 'US Carpet Bombs North Vietnam in "Christmas Bombings"',
@@ -242,5 +265,65 @@ export let headlines = [
     endDay: 31,
     endMonth: 8,
     endYear: 1973
+  },
+  {
+    headline: 'Martin Luther King Delivers "Beyond Vietnam" Speech',
+    paragraph:
+      'Martin Luther King Jr.  denounces the war in a famous speech delivered at the Riverside Church. Included in his speech are calls for an end of all bombings in North and South Vietnam, a unilateral ceasefire, removal of troops, and a reduction in involvement in Thailand and Laos. He is met with backlash with some calling his linkage of the war to the civil rights movement as self-defeating.',
+    startDay: 4,
+    startMonth: 4,
+    startYear: 1967,
+    endDay: 27,
+    endMonth: 4,
+    endYear: 1967,
+    us: true
+  },
+  {
+    headline: 'Muhammad Ali Refuses Induction Into US Forces',
+    paragraph:
+      'Muhammad Ali refuses to be drafted to fight in the Vietnam War during a time when the majority of public opinion views the war favorably.  A few days prior, he states, “I will not go ten thousand miles from here to help murder and kill another poor people simply to continue the domination of white slave masters over the darker people of the earth.” At the day of his induction, he is arrested and his boxing license is suspended.',
+    startDay: 28,
+    startMonth: 4,
+    startYear: 1967,
+    endDay: 1,
+    endMonth: 6,
+    endYear: 1967,
+    us: true
+  },
+  {
+    headline: 'Demonstrators March on the Pentagon',
+    paragraph:
+      'Around 100 thousand antiwar demonstrators march on Washington, D.C.  Additionally, 35 to 50 thousand protesters take to the Pentagon and hundreds of them are arrested for civil disobedience.',
+    startDay: 21,
+    startMonth: 10,
+    startYear: 1967,
+    endDay: 1,
+    endMonth: 11,
+    endYear: 1967,
+    us: true
+  },
+  {
+    headline: 'Demonstrators March on Washington in Nationwide Moratorium',
+    paragraph:
+      'Around 500,000 marchers take to the capitol to protest the war once more. Separate Asian-American demonstration groups march as well to protest against the racial nature of the war while President Nixon stays inside to watch a football game.',
+    startDay: 15,
+    startMonth: 11,
+    startYear: 1969,
+    endDay: 15,
+    endMonth: 12,
+    endYear: 1969,
+    us: true
+  },
+  {
+    headline: 'Pentagon Papers Are Released By The New York Times',
+    paragraph:
+      'The New York Times releases the first installment of the Pentagon Papers. The study reveals the extent to which Johnson and his administration lied about involvement in Southeast Asia, which further decreases public approval of the war. Nixon’s administration asks the paper to stop releasing the papers and sues The Times when they refuse. The Supreme Court rules against the administration.',
+    startDay: 13,
+    startMonth: 6,
+    startYear: 1971,
+    endDay: 20,
+    endMonth: 7,
+    endYear: 1971,
+    us: true
   }
 ];
