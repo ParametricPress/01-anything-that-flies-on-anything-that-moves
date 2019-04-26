@@ -15,7 +15,7 @@ class TotalMissions extends React.Component {
     var strDate = month + '/' + day + '/' + String(year).substring(2);
     var numMissions = this.map.get(strDate);
     var formatNum = String(numMissions).replace(/(.)(?=(\d{3})+$)/g, '$1,');
-    return <div>{formatNum + ' Completed Bombing Missions'}</div>;
+    return <div style={{color: '#7e7e7e'}}>{formatNum + ' Completed Bombing Missions'}</div>;
   }
 }
 
