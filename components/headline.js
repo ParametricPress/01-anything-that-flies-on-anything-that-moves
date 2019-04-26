@@ -58,6 +58,9 @@ class Headline extends React.Component {
       });
       if (newHeadlines.length === 1 && this.headline === null) {
         this.headline = newHeadlines[0];
+        this.props.updateProps({
+          speed: 350
+        });
       }
     }
   }
@@ -81,6 +84,9 @@ class Headline extends React.Component {
 
       if (propsDate <= startDate || propsDate >= endDate) {
         this.headline = null;
+        this.props.updateProps({
+          speed: 100
+        });
       }
     }
   }

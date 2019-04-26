@@ -8,6 +8,7 @@
 [var name:month value:10 /]
 [var name:year value:1965/]
 [var name:totalMissions value:355 /] // start num missions
+[var name:speed value:100 /]
 
 [data name:"loessFit" source:"loess.json" /]
 [data name:"runSum" source:"running_sum.csv" /]
@@ -46,7 +47,7 @@ in the visualization below. Note that data from 1974 and 1975 are ommited due to
       [Date day:day month:month year:year /]
       [TotalMissions data:runSum day:day month:month year:year /]
     [/div]
-    [PlayButton day:day month:month year:year play:play /]
+    [PlayButton day:day month:month year:year play:play speed:speed /]
   [/div]
 
   [div className:"map-interactive-content"]
@@ -54,7 +55,7 @@ in the visualization below. Note that data from 1974 and 1975 are ommited due to
      [AnimatedMap fullWidth:true day:day month:month year:year /]
     [/div]
     [div className:"headline-container"]
-      [Headline day:day month:month year:year /]
+      [Headline day:day month:month year:year speed:speed /]
     [/div]
   [/div]
 

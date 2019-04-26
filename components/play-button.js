@@ -3,7 +3,11 @@ const React = require('react');
 class PlayButton extends React.Component {
   constructor(props) {
     super(props);
+    this.play = this.play.bind(this);
+    this.autoIncrement = this.autoIncrement.bind(this);
+
     this.date = new Date(`${props.year}-${props.month}-${props.day}`);
+    this.speed = props.speed;
   }
 
   play() {
@@ -15,8 +19,12 @@ class PlayButton extends React.Component {
       play: !this.props.play
     });
 
+    this.autoIncrement(this.props.play);
+  }
+
+  autoIncrement(play) {
     // If turned on, auto-increment timeline
-    if (this.props.play) {
+    if (play) {
       this.interval = setInterval(() => {
         this.date.setDate(this.date.getDate() + 1);
 
@@ -40,9 +48,20 @@ class PlayButton extends React.Component {
             year: this.date.getFullYear()
           });
         }
-      }, 100);
+      }, this.speed);
     } else {
       clearInterval(this.interval);
+    }
+  }
+
+  // Speed up and slow down based on whether headline is triggered
+  componentDidUpdate(prevProps) {
+    if (prevProps.speed !== this.props.speed) {
+      this.speed = this.props.speed;
+      if (!this.props.play) {
+        clearInterval(this.interval);
+        this.autoIncrement(true);
+      }
     }
   }
 
