@@ -117,8 +117,8 @@ export let headlines = [
     startDay: 18,
     startMonth: 3,
     startYear: 1970,
-    endDay: 31,
-    endMonth: 3,
+    endDay: 15,
+    endMonth: 4,
     endYear: 1970
   },
   {
@@ -129,7 +129,7 @@ export let headlines = [
     startDay: 30,
     startMonth: 4,
     startYear: 1970,
-    endDay: 15,
+    endDay: 17,
     endMonth: 5,
     endYear: 1970
   },
