@@ -94,8 +94,8 @@ export let headlines = [
     startDay: 20,
     startMonth: 1,
     startYear: 1969,
-    endDay: 31,
-    endMonth: 1,
+    endDay: 10,
+    endMonth: 2,
     endYear: 1969
   },
 
