@@ -21,7 +21,7 @@ let initialViewport;
 
 const asiaVP = {
   latitude: 15.8700,
-  longitude: 102.0865,
+  longitude: 104.0865,
   pitch: 0,
   zoom: 4,
   bearing: 0
@@ -100,7 +100,6 @@ class App extends Component {
   }
 
   _resize() {
-    console.log('resize', this.ref.getBoundingClientRect().width);
     this._onChangeViewport({
       width: this.ref ? this.ref.getBoundingClientRect().width : 400,
       height: window.innerHeight / 2

@@ -1,13 +1,6 @@
-.idyll-step:first-of-type {
-  margin-top: 0;
-}
 
-.parametric-header-image img {
-  left: 5px;
-}
-
-.parametric-long-title {
-  font-size: 56px;
+h1.hed, h1.hed-rotate {
+  line-height: 230px;
 }
 
 .faded {
@@ -173,10 +166,26 @@ path.loess {
     padding: 0 1em;
   }
   .map-interactive-content {
+    flex-direction: column;
+  }
+  .map-interactive-content > div {
+    width: 100% !important;
   }
   .parametric-caption {
     margin-left: 1em;
     margin-right: 1em;
   }
 
+  .headline-title {
+    line-height: 1.2;
+    font-size: 18px;
+  }
+
+  .headline-paragraph {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .map-interactive-header {
+    line-height: 20px;
+  }
 }

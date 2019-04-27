@@ -60,7 +60,7 @@ in the visualization below with teal events relating to the bombings. Pink event
   [/div]
 
 
-  [div className:"map-interactive-timeline"]
+  [div className:"map-interactive-timeline desktop"]
     [LineChart loessFit:loessFit day:day month:month year:year play:play /]
   [/div]
 

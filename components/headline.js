@@ -20,10 +20,10 @@ class Headline extends React.Component {
   // filters out any outdated events
   componentDidUpdate(prevProps) {
     let propsDate = new Date(
-      `${this.props.year}-${this.props.month}-${this.props.day}`
+      `${this.props.year}/${this.props.month}/${this.props.day}`
     );
     let prevDate = new Date(
-      `${prevProps.year}-${prevProps.month}-${prevProps.day}`
+      `${prevProps.year}/${prevProps.month}/${prevProps.day}`
     );
 
     if (prevDate !== propsDate) {
@@ -47,11 +47,11 @@ class Headline extends React.Component {
         }
 
         let startDate = new Date(
-          `${headline.startYear}-${headline.startMonth}-${headline.startDay}`
+          `${headline.startYear}/${headline.startMonth}/${headline.startDay}`
         );
 
         let endDate = new Date(
-          `${headline.endYear}-${headline.endMonth}-${headline.endDay}`
+          `${headline.endYear}/${headline.endMonth}/${headline.endDay}`
         );
 
         return propsDate >= startDate && propsDate <= endDate;
@@ -75,11 +75,11 @@ class Headline extends React.Component {
 
       let headline = this.headline;
       let startDate = new Date(
-        `${headline.startYear}-${headline.startMonth}-${headline.startDay}`
+        `${headline.startYear}/${headline.startMonth}/${headline.startDay}`
       );
 
       let endDate = new Date(
-        `${headline.endYear}-${headline.endMonth}-${headline.endDay}`
+        `${headline.endYear}/${headline.endMonth}/${headline.endDay}`
       );
 
       if (propsDate <= startDate || propsDate >= endDate) {
@@ -110,7 +110,7 @@ class HeadlineItem extends React.Component {
     return (
       <div className={this.props.fade ? 'faded' : 'active'} {...props}>
         <div className='headline-title'>
-          <div className="headline-title-date">
+          <div className="headline-title-date desktop">
           {item === null
             ? ''
             : item.startMonth +

@@ -6,13 +6,14 @@ class PlayButton extends React.Component {
     this.play = this.play.bind(this);
     this.autoIncrement = this.autoIncrement.bind(this);
 
-    this.date = new Date(`${props.year}-${props.month}-${props.day}`);
+    this.date = new Date(`${props.year}/${props.month}/${props.day}`);
+    console.log('date', this.date);
     this.speed = props.speed;
   }
 
   play() {
     this.date = new Date(
-      `${this.props.year}-${this.props.month}-${this.props.day}`
+      `${this.props.year}/${this.props.month}/${this.props.day}`
     );
     // Pause if playing, play if paused
     this.props.updateProps({
