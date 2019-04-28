@@ -8,7 +8,7 @@ class PlayButton extends React.Component {
 
     this.date = new Date(`${props.year}/${props.month}/${props.day}`);
     console.log('date', this.date);
-    this.speed = props.speed;
+    this.timeout = props.timeout;
   }
 
   play() {
@@ -42,6 +42,7 @@ class PlayButton extends React.Component {
             play: true
           });
           clearInterval(this.interval);
+          clearTimeout(this.timeout);
         } else {
           this.props.updateProps({
             day: this.date.getDate(),
@@ -49,19 +50,25 @@ class PlayButton extends React.Component {
             year: this.date.getFullYear()
           });
         }
-      }, this.speed);
+      }, 150);
     } else {
       clearInterval(this.interval);
+      clearTimeout(this.timeout);
     }
   }
 
-  // Speed up and slow down based on whether headline is triggered
+  // timeout up and slow down based on whether headline is triggered
   componentDidUpdate(prevProps) {
-    if (prevProps.speed !== this.props.speed) {
-      this.speed = this.props.speed;
+    if (prevProps.timeout !== this.props.timeout) {
+      this.timeout = this.props.timeout;
       if (!this.props.play) {
         clearInterval(this.interval);
-        this.autoIncrement(true);
+        this.timeout = setTimeout(() => {
+          this.autoIncrement(true);
+        }, this.timeout);
+      } else {
+        clearTimeout(this.timeout);
+        clearInterval(this.interval);
       }
     }
   }
@@ -74,7 +81,10 @@ class PlayButton extends React.Component {
     const { hasError, idyll, updateProps, ...props } = this.props;
     return (
       <div {...props}>
-        <button onClick={this.play.bind(this)} className={this.props.play ? '' : 'playing' }>
+        <button
+          onClick={this.play.bind(this)}
+          className={this.props.play ? '' : 'playing'}
+        >
           {this.props.play ? 'Play' : 'Pause'}
         </button>
       </div>

@@ -50,16 +50,20 @@ class Headline extends React.Component {
           `${headline.startYear}/${headline.startMonth}/${headline.startDay}`
         );
 
+        startDate.setDate(startDate.getDate() - 1)
+
         let endDate = new Date(
-          `${headline.endYear}/${headline.endMonth}/${headline.endDay}`
+          `${headline.startYear}/${headline.startMonth}/${headline.startDay}`
         );
+
+        endDate.setDate(endDate.getDate() + 5);
 
         return propsDate >= startDate && propsDate <= endDate;
       });
       if (newHeadlines.length === 1 && this.headline === null) {
         this.headline = newHeadlines[0];
         this.props.updateProps({
-          speed: 350
+          timeout: 10000
         });
       }
     }
@@ -85,7 +89,7 @@ class Headline extends React.Component {
       if (propsDate <= startDate || propsDate >= endDate) {
         this.headline = null;
         this.props.updateProps({
-          speed: 100
+          timeout: 0
         });
       }
     }
@@ -110,20 +114,12 @@ class HeadlineItem extends React.Component {
     return (
       <div className={this.props.fade ? 'faded' : 'active'} {...props}>
         <div className='headline-title'>
-          <div className="headline-title-date desktop">
-          {item === null
-            ? ''
-            : item.startMonth +
-              '/' +
-              item.startDay +
-              '/' +
-              item.startYear}
-          </div>
-          <div>
+          <div className='headline-title-date desktop'>
             {item === null
               ? ''
-              : item.headline}
+              : item.startMonth + '/' + item.startDay + '/' + item.startYear}
           </div>
+          <div>{item === null ? '' : item.headline}</div>
         </div>
         <div className='headline-paragraph'>
           {item === null ? '' : item.paragraph}
