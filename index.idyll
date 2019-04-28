@@ -1,4 +1,4 @@
-[meta title:"SE Asia Bombs" description:"TK Description" /]
+[meta title:"Anything That Flies, On Anything That Moves" description:"The US covertly launched over two million bombing missions over Southeast Asian countries in the 1960s and 70s. Dig into the data behind the assault" /]
 
 [var name:"parametricSlug" value:"anything-that-flies-anything-that-moves" /]
 
@@ -19,7 +19,7 @@
   title:`["Anthything", "That Moves"]`
   longTitle:`["Anything That Flies,", "On Anything That Moves"]`
   date:"April 15, 2019"
-  dek:"Behind the Two Million US Bombings Missions that Struck Southeast Asia"
+  dek:"The US covertly launched over two million bombing missions over Southeast Asian countries in the 1960s and 70s. Dig into the data behind the assault."
   fullWidth:true
   authors:`[{
     name: "Megan Vo",
