@@ -9,6 +9,7 @@
 [var name:year value:1965/]
 [var name:totalMissions value:355 /] // start num missions
 [var name:timeout value:100 /]
+[var name:paused value:false /]
 
 [data name:"loessFit" source:"loess.json" /]
 [data name:"runSum" source:"running_sum.csv" /]
@@ -38,7 +39,7 @@ Much of the publicity surrounding US bombing campaigns during the Vietnam War hi
 These records show that from October 1965 and August 1973, the United States launched an average of about 924
 bombing missions per day, accumulating over two million in total in
 the 8 year span. Each of these potentially deadly strikes are presented
-in the visualization below with teal events relating to the bombings. Pink events contextualize what is happening back in the US at the time surrounding Southeast Asia. Note that data from 1974 and 1975 are ommited due to missing coordinates and lack of continuity between years.
+in the visualization below with teal events relating to the bombings. Pink events contextualize what was happening back in the US at the time surrounding Southeast Asia. Note that data from 1974 and 1975 are ommited due to missing coordinates and lack of continuity between years.
 
 [div fullWidth:true className:"map-interactive"]
 
@@ -47,7 +48,7 @@ in the visualization below with teal events relating to the bombings. Pink event
       [Date day:day month:month year:year /]
       [TotalMissions data:runSum day:day month:month year:year /]
     [/div]
-    [PlayButton day:day month:month year:year play:play timeout:timeout /]
+    [PlayButton day:day month:month year:year play:play timeout:timeout paused:paused /]
   [/div]
 
   [div className:"map-interactive-content"]
@@ -55,7 +56,8 @@ in the visualization below with teal events relating to the bombings. Pink event
      [AnimatedMap fullWidth:true day:day month:month year:year /]
     [/div]
     [div className:"headline-container"]
-      [Headline day:day month:month year:year timeout:timeout /]
+      [Headline day:day month:month year:year timeout:timeout play:play paused:paused /]
+      [button className:`paused && !play ? 'paused' : 'resumed' ` onClick:`paused = !paused `]Resume[/button]
     [/div]
   [/div]
 

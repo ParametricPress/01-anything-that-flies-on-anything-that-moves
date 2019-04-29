@@ -1,5 +1,5 @@
-
-h1.hed, h1.hed-rotate {
+h1.hed,
+h1.hed-rotate {
   line-height: 230px;
 }
 
@@ -84,7 +84,7 @@ path.loess {
   margin-bottom: 1em;
 }
 .map-interactive button {
-  background: #FFE533;
+  background: #ffe533;
   color: #222;
   transition: transform 0.25s;
   width: 115px;
@@ -149,7 +149,7 @@ path.loess {
 }
 .headline-title-date {
   font-size: 18px;
-  color: #7E7E7E;
+  color: #7e7e7e;
 }
 
 .mapboxgl-ctrl-attrib .mapbox-improve-map {
@@ -159,6 +159,14 @@ path.loess {
 .parametric-caption {
   margin-left: 50px;
   margin-right: 50px;
+}
+
+.resumed {
+  display: none;
+}
+
+.paused {
+  display: block;
 }
 
 @media all and (max-width: 1000px) {

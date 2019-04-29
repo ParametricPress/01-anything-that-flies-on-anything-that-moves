@@ -6,7 +6,7 @@ export let headlines = [
     startDay: 2,
     startMonth: 10,
     startYear: 1965,
-    endDay: 31, // last till end of month
+    endDay: 12, // last till end of month
     endMonth: 10,
     endYear: 1965
   },
@@ -17,7 +17,7 @@ export let headlines = [
     startDay: 6,
     startMonth: 12,
     startYear: 1965,
-    endDay: 24,
+    endDay: 16,
     endMonth: 12,
     endYear: 1965
   },
@@ -28,7 +28,7 @@ export let headlines = [
     startDay: 25,
     startMonth: 12,
     startYear: 1965,
-    endDay: 25,
+    endDay: 5,
     endMonth: 1,
     endYear: 1966
   },
@@ -40,7 +40,7 @@ export let headlines = [
     startMonth: 1,
     startYear: 1966,
     endDay: 10,
-    endMonth: 3,
+    endMonth: 2,
     endYear: 1966
   },
   {
@@ -50,7 +50,7 @@ export let headlines = [
     startDay: 29,
     startMonth: 6,
     startYear: 1966,
-    endDay: 28,
+    endDay: 10,
     endMonth: 7,
     endYear: 1966
   },
@@ -61,7 +61,7 @@ export let headlines = [
     startDay: 31,
     startMonth: 3,
     startYear: 1968,
-    endDay: 30,
+    endDay: 11,
     endMonth: 4,
     endYear: 1968
   },
@@ -83,8 +83,8 @@ export let headlines = [
     startDay: 11,
     startMonth: 11,
     startYear: 1968,
-    endDay: 11,
-    endMonth: 12,
+    endDay: 25,
+    endMonth: 11,
     endYear: 1968
   },
   {
@@ -94,9 +94,10 @@ export let headlines = [
     startDay: 20,
     startMonth: 1,
     startYear: 1969,
-    endDay: 10,
+    endDay: 5,
     endMonth: 2,
-    endYear: 1969
+    endYear: 1969,
+    us: true
   },
 
   {
@@ -106,7 +107,7 @@ export let headlines = [
     startDay: 18,
     startMonth: 3,
     startYear: 1969,
-    endDay: 30,
+    endDay: 1,
     endMonth: 4,
     endYear: 1969
   },
@@ -117,7 +118,7 @@ export let headlines = [
     startDay: 18,
     startMonth: 3,
     startYear: 1970,
-    endDay: 15,
+    endDay: 1,
     endMonth: 4,
     endYear: 1970
   },
@@ -129,7 +130,7 @@ export let headlines = [
     startDay: 30,
     startMonth: 4,
     startYear: 1970,
-    endDay: 17,
+    endDay: 10,
     endMonth: 5,
     endYear: 1970
   },
@@ -140,7 +141,7 @@ export let headlines = [
     startDay: 19,
     startMonth: 5,
     startYear: 1970,
-    endDay: 25,
+    endDay: 5,
     endMonth: 6,
     endYear: 1970
   },
@@ -162,7 +163,7 @@ export let headlines = [
     startDay: 1,
     startMonth: 11,
     startYear: 1967,
-    endDay: 30,
+    endDay: 20,
     endMonth: 11,
     endYear: 1967
   },
@@ -173,8 +174,8 @@ export let headlines = [
     startDay: 31,
     startMonth: 1,
     startYear: 1968,
-    endDay: 1,
-    endMonth: 3,
+    endDay: 15,
+    endMonth: 2,
     endYear: 1968
   },
   {
@@ -184,8 +185,8 @@ export let headlines = [
     startDay: 4,
     startMonth: 5,
     startYear: 1968,
-    endDay: 15,
-    endMonth: 6,
+    endDay: 25,
+    endMonth: 5,
     endYear: 1968
   },
   {
@@ -206,7 +207,7 @@ export let headlines = [
     startDay: 17,
     startMonth: 6,
     startYear: 1972,
-    endDay: 16,
+    endDay: 1,
     endMonth: 7,
     endYear: 1972,
     us: true
@@ -229,7 +230,7 @@ export let headlines = [
     startDay: 27,
     startMonth: 1,
     startYear: 1973,
-    endDay: 20,
+    endDay: 5,
     endMonth: 2,
     endYear: 1973
   },
@@ -251,8 +252,8 @@ export let headlines = [
     startDay: 9,
     startMonth: 3,
     startYear: 1973,
-    endDay: 5,
-    endMonth: 4,
+    endDay: 20,
+    endMonth: 3,
     endYear: 1973
   },
   {
@@ -285,8 +286,8 @@ export let headlines = [
     startDay: 28,
     startMonth: 4,
     startYear: 1967,
-    endDay: 1,
-    endMonth: 6,
+    endDay: 8,
+    endMonth: 5,
     endYear: 1967,
     us: true
   },
@@ -309,7 +310,7 @@ export let headlines = [
     startDay: 15,
     startMonth: 11,
     startYear: 1969,
-    endDay: 15,
+    endDay: 1,
     endMonth: 12,
     endYear: 1969,
     us: true
@@ -321,7 +322,7 @@ export let headlines = [
     startDay: 13,
     startMonth: 6,
     startYear: 1971,
-    endDay: 20,
+    endDay: 1,
     endMonth: 7,
     endYear: 1971,
     us: true

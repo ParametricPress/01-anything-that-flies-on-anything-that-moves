@@ -28,7 +28,7 @@ class Headline extends React.Component {
 
     if (prevDate !== propsDate) {
       // Adds headline to subset stage
-      this.stageNewHeadlines(propsDate);
+      this.stageNewHeadlines(propsDate, prevProps);
 
       // Keeps only the active headlines on stage
       this.removeHeadlines(propsDate);
@@ -38,7 +38,7 @@ class Headline extends React.Component {
   // Takes in the current props date and filters data
   // for headlines that match current date. Returns
   // array of headline objects that do
-  stageNewHeadlines(propsDate) {
+  stageNewHeadlines(propsDate, prevProps) {
     if (this.state.headlineSubset.length === 0) {
       let newHeadlines = headlines.filter(headline => {
         // prevents re-rendering infinite loop
@@ -50,7 +50,7 @@ class Headline extends React.Component {
           `${headline.startYear}/${headline.startMonth}/${headline.startDay}`
         );
 
-        startDate.setDate(startDate.getDate() - 1)
+        startDate.setDate(startDate.getDate() - 1);
 
         let endDate = new Date(
           `${headline.startYear}/${headline.startMonth}/${headline.startDay}`
@@ -62,9 +62,11 @@ class Headline extends React.Component {
       });
       if (newHeadlines.length === 1 && this.headline === null) {
         this.headline = newHeadlines[0];
-        this.props.updateProps({
-          timeout: 10000
-        });
+        if (prevProps.play === this.props.play && !this.props.play) {
+          this.props.updateProps({
+            paused: true
+          });
+        }
       }
     }
   }
@@ -89,14 +91,14 @@ class Headline extends React.Component {
       if (propsDate <= startDate || propsDate >= endDate) {
         this.headline = null;
         this.props.updateProps({
-          timeout: 0
+          paused: false
         });
       }
     }
   }
 
   render() {
-    return <HeadlineItem headline={this.headline} />;
+    return <HeadlineItem headline={this.headline} play={this.props.play} />;
   }
 }
 
