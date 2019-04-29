@@ -169,6 +169,13 @@ path.loess {
   display: block;
 }
 
+.headline-container button {
+  background: none;
+  color: #ffe533;
+  border: none;
+  border-bottom: solid 1px white;
+}
+
 @media all and (max-width: 1000px) {
   .map-interactive-header {
     padding: 0 1em;
