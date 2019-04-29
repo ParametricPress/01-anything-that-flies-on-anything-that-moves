@@ -1,6 +1,6 @@
 [meta title:"Anything That Flies, On Anything That Moves" description:"The US covertly launched over two million bombing missions over Southeast Asian countries in the 1960s and 70s. Dig into the data behind the assault" /]
 
-[var name:"parametricSlug" value:"anything-that-flies-anything-that-moves" /]
+[var name:"parametricSlug" value:"anything-that-flies-on-anything-that-moves" /]
 
 // Variables
 [var name:play value:true /] // controls state of autoplay

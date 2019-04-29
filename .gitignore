@@ -63,3 +63,5 @@ build
 .vscode
 
 missions.csv
+
+static/fonts
