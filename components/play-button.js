@@ -7,11 +7,16 @@ class PlayButton extends React.Component {
     this.autoIncrement = this.autoIncrement.bind(this);
 
     this.date = new Date(`${props.year}/${props.month}/${props.day}`);
-    console.log('date', this.date);
     this.timeout = props.timeout;
   }
 
   play() {
+    if (!this.props.play && this.props.paused) {
+      this.props.updateProps({
+        paused: false
+      });
+      return;
+    }
     this.date = new Date(
       `${this.props.year}/${this.props.month}/${this.props.day}`
     );
@@ -87,15 +92,29 @@ class PlayButton extends React.Component {
     clearInterval(this.interval);
   }
 
+  getButtonText() {
+    if (this.props.play) {
+      return 'Play';
+    }
+    if (this.props.paused) {
+      return 'Advance →';
+    }
+    return 'Pause';
+  }
+
+  getClassName() {
+    return (this.props.play || this.props.paused) ? '' : 'playing';
+  }
+
   render() {
     const { hasError, idyll, updateProps, ...props } = this.props;
     return (
       <div {...props}>
         <button
           onClick={this.play.bind(this)}
-          className={this.props.play ? '' : 'playing'}
+          className={this.getClassName()}
         >
-          {this.props.play ? 'Play' : 'Pause'}
+          {this.getButtonText()}
         </button>
       </div>
     );

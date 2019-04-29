@@ -57,7 +57,7 @@ in the visualization below with teal events relating to the bombings. Pink event
     [/div]
     [div className:"headline-container"]
       [Headline day:day month:month year:year timeout:timeout play:play paused:paused /]
-      [button className:`paused && !play ? 'paused' : 'resumed' ` onClick:`paused = !paused `]Resume[/button]
+      [button className:`paused && !play ? 'paused' : 'resumed' ` onClick:`paused = !paused `]Click to advance →[/button]
     [/div]
   [/div]
 
@@ -76,17 +76,25 @@ Records labeled as air-to-air combat missions in the original records were also 
 
 Here is the impact and breakdown of all bombing missions on each country:
 
-## Laos: > 2,000,000 tons
+[h2]Laos [span className:"bombing-magnitude"]Over 2 million tons[/span][/h2]
 
 Laos is the heaviest bombed country per capita in the world. For nine years, the US dropped an [a href:"http://legaciesofwar.org/about-laos/secret-war-laos/"]equivalent of a planeload of bombs every eight minutes[/a] around the clock. Despite past government claims that the bombings were done over rural, unpopulated areas, these missions destroyed many villages, and displaced, maimed, and killed many Laotian civilians. It is estimated that 30 percent of these bombs—the most common and dangerous being the cluster bomb—remain undetonated throughout the country today.
 
-## Cambodia: > 500,000 tons
+
+[h2]Cambodia [span className:"bombing-magnitude"]500,000 tons[/span][/h2]
 
 According to a [a href:"https://www.jstor.org/stable/10.1525/vs.2014.8.4.86"]research essay[/a] published by the Journal of Vietnamese Studies, statistical representations of the Vietnam War historically estimate that around 500,000 tons of bombs were dropped over Cambodia. However, Ben Kiernan—a leading historian of Cambodia and professor at Yale University—proposes estimates of around 2.7 tons of ordnance based on his [a href:"https://apjjf.org/Ben-Kiernan/4313.html"]research[/a], which would make Cambodia one of the most heavily bombed countries to date. On deeper analysis of the database, researchers warn that the incongruence of the two estimates suggest that the data supplied by the Department of Defense may be [a href:"https://www.jstor.org/stable/10.1525/vs.2014.8.4.86"]incomplete and corrupted[/a].
 
 The bombings had more effect on the country than generating body counts and riddling the land with bombs and unexploded ordnances. At the time, the Khmer Rouge used the [a href:"https://apjjf.org/-Taylor-Owen/2420/article.html"]intense bombing campaigns as propaganda[/a] to help them gain footing among villagers devastated by the bombs. The group grew to later take over Cambodia and massacre almost one-fourth of the population.
 
-## South Vietnam: > 2,000,000 tons and North Vietnam: > 1,000,000 tons
+[h2 style:`{marginBottom: 0}`]
+Vietnam
+[/h2]
+
+[h3 style:`{marginTop: 0, fontWeight: 500}`]
+  South [span className:"bombing-magnitude"]Over 2 million tons[/span][br/]
+  North [span className:"bombing-magnitude"]Over 1 million tons[/span][br/]
+[/h3]
 
 The Journal of Vietnamese Studies also calculates that South Vietnam suffered the most bombings in terms of raw count despite being a US ally. The central province of Quang Tri is recorded as the most heavily bombed area in all of Vietnam with [a href:"https://pdfs.semanticscholar.org/6964/e34280dcc5d6ada50702ec3a409ea9f781c9.pdf"]only 11 of 3,500 villages remaining[/a] after the campaigns. Like Laos and Cambodia, Vietnam is contaminated with unexploded ordnances leftover from the war.
 

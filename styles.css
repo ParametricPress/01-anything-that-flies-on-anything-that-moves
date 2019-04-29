@@ -87,7 +87,7 @@ path.loess {
   background: #ffe533;
   color: #222;
   transition: transform 0.25s;
-  width: 115px;
+  width: 150px;
 }
 .map-interactive button.playing {
   background: #c5c5c5;
@@ -97,6 +97,13 @@ path.loess {
 }
 .map-interactive text {
   fill: #c5c5c5;
+}
+
+.bombing-magnitude {
+  color: #5da391;
+  font-size: 0.8em;
+  margin-left: 0.25em;
+  font-weight: 400;
 }
 
 .map-interactive text.y1,
@@ -138,7 +145,7 @@ path.loess {
   font-family: 'Graphik Web';
   font-weight: bold;
   line-height: 1.33;
-  font-size: 28px;
+  font-size: 24px;
   /* max-width: 400px; */
 }
 .headline-paragraph {
@@ -174,6 +181,7 @@ path.loess {
   color: #ffe533;
   border: none;
   border-bottom: solid 1px white;
+  width: 225px;
 }
 
 @media all and (max-width: 1000px) {
