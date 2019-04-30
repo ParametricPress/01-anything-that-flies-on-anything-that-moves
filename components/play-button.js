@@ -109,7 +109,7 @@ class PlayButton extends React.Component {
   render() {
     const { hasError, idyll, updateProps, ...props } = this.props;
     return (
-      <div {...props}>
+      <div>
         <button
           onClick={this.play.bind(this)}
           className={this.getClassName()}
