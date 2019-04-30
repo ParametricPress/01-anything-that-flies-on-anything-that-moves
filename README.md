@@ -22,6 +22,17 @@ Thank you to the editors of the Parametric Press for the opportunity and special
 
 - Porter, Melvin F. 1966. Project CHECO Report: Tiger Hound. Project CHECO Report: Tiger Hound. Declassified
 
+#### President Johnson Halts Air Strikes Against North Vietnam
+
+- Cox, Samuel J. 2018. “H-017-2: Operation Rolling Thunder Overview.” Naval History and Heritage Command. U.S. Navy. March 27, 2018. https://www.history.navy.mil/about-us/leadership/director/directors-corner/h-grams/h-gram-017/h-017-21.html.
+
+#### November Records Missing Due to Damage
+- [Data](https://data.world/datamil/vietnam-war-thor-data)
+
+- Zelizer, Julian E. 2018. “How the Tet Offensive Undermined American Faith in Government.” The Atlantic. Atlantic Media Company. January 16, 2018. https://www.theatlantic.com/politics/archive/2018/01/how-the-tet-offensive-undermined-american-faith-in-government/550010/.
+
+
+
 
 
 ## Installing dependencies
