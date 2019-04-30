@@ -20,8 +20,8 @@ Thank you to the editors of the Parametric Press for the opportunity and special
 
 - Porter, Melvin F. 1966. Project CHECO Report: Tiger Hound. Project CHECO Report: Tiger Hound. Declassified
 
-#### President Johnson Halts Air Strikes Against North Vietnam
-- Cox, Samuel J. 2018. “H-017-2: Operation Rolling Thunder Overview.” Naval History and Heritage Command. U.S. Navy. March 27, 2018. https://www.history.navy.mil/about-us/leadership/director/directors-corner/h-grams/h-gram-017/h-017-21.html.
+#### President Johnson Halts Air Strikes Against North Vietnam (12/25)
+- “LBJ AND EISENHOWER ON BOMBING NORTH VIETNAM.” n.d. The Miller Center. University of Virginia. https://millercenter.org/the-presidency/educational-resources/lbj-and-eisenhower-on-bombing-north-vietnam.
 
 #### Johnson Resumes Bombings of North Vietnam
 - Johnson, Lyndon B. n.d. “January 31, 1966: Statement on the Resumption of Bombing in North Vietnam.” The Miller Center. https://millercenter.org/the-presidency/presidential-speeches/january-31-1966-statement-resumption-bombing-north-vietnam.
@@ -49,9 +49,16 @@ Thank you to the editors of the Parametric Press for the opportunity and special
 - “U.S. Involvement in the Vietnam War: The Tet Offensive, 1968.” n.d. U.S. Department of State. U.S. Department of State. https://history.state.gov/milestones/1961-1968/tet.
 
 #### President Johnson Calls for Halt to Bombings in Address (3/31)
+- Johnson, Lyndon B. n.d. “March 31, 1968: Remarks on Decision Not to Seek Re-Election.” The Miller Center. Speech. https://millercenter.org/the-presidency/presidential-speeches/march-31-1968-remarks-decision-not-seek-re-election.
 
+#### The May Offensive Hits South Vietnam
+- Thompson, A W. 1968. The Defense of Saigon. The Defense of Saigon. https://www.vietnam.ttu.edu/star/images/039/0390135001A.pdf.
 
+#### Operation Rolling Thunder Ends
+- Cox, Samuel J. 2018. “H-017-2: Operation Rolling Thunder Overview.” Naval History and Heritage Command. U.S. Navy. March 27, 2018. https://www.history.navy.mil/about-us/leadership/director/directors-corner/h-grams/h-gram-017/h-017-21.html.
 
+#### Johnson Calls for Complete Halt of North Vietnam Bombings
+-
 
 ## Installing dependencies
 
