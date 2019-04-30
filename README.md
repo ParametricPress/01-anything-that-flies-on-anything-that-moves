@@ -46,6 +46,11 @@ Thank you to the editors of the Parametric Press for the opportunity and special
 - Zelizer, Julian E. 2018. “How the Tet Offensive Undermined American Faith in Government.” The Atlantic. Atlantic Media Company. January 16, 2018. https://www.theatlantic.com/politics/archive/2018/01/how-the-tet-offensive-undermined-american-faith-in-government/550010/.
 
 #### The Tet Offensive Begins
+- “U.S. Involvement in the Vietnam War: The Tet Offensive, 1968.” n.d. U.S. Department of State. U.S. Department of State. https://history.state.gov/milestones/1961-1968/tet.
+
+#### President Johnson Calls for Halt to Bombings in Address (3/31)
+
+
 
 
 ## Installing dependencies
