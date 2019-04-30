@@ -1,5 +1,4 @@
 const React = require('react');
-import { Collapse } from 'react-bootstrap';
 import { headlines } from './headline-data.js';
 
 // Wrapper parent component
@@ -14,6 +13,16 @@ class Headline extends React.Component {
 
     this.stageNewHeadlines = this.stageNewHeadlines.bind(this);
     this.removeHeadlines = this.removeHeadlines.bind(this);
+
+    this.dateMap = new Map();
+
+    headlines.forEach(headline => {
+      var date = new Date(
+        `${headline.startYear}/${headline.startMonth}/${headline.startDay}`
+      );
+      date.setDate(date.getDate() - 1);
+      this.dateMap.set(headline, date);
+    });
   }
 
   // When dates update, stages a new headline to display and
@@ -46,11 +55,7 @@ class Headline extends React.Component {
           return false;
         }
 
-        let startDate = new Date(
-          `${headline.startYear}/${headline.startMonth}/${headline.startDay}`
-        );
-
-        startDate.setDate(startDate.getDate() - 1);
+        let startDate = this.dateMap.get(headline);
 
         let endDate = new Date(
           `${headline.startYear}/${headline.startMonth}/${headline.startDay}`
@@ -80,9 +85,7 @@ class Headline extends React.Component {
       // something to remove
 
       let headline = this.headline;
-      let startDate = new Date(
-        `${headline.startYear}/${headline.startMonth}/${headline.startDay}`
-      );
+      let startDate = this.dateMap.get(headline);
 
       let endDate = new Date(
         `${headline.endYear}/${headline.endMonth}/${headline.endDay}`

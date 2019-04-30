@@ -47,7 +47,6 @@ class PlayButton extends React.Component {
             play: true
           });
           clearInterval(this.interval);
-          // clearTimeout(this.timeoutInterval);
         } else {
           this.props.updateProps({
             day: this.date.getDate(),
@@ -58,30 +57,16 @@ class PlayButton extends React.Component {
       }, 125);
     } else {
       clearInterval(this.interval);
-      // clearTimeout(this.timeoutInterval);
     }
   }
 
   // timeout up and slow down based on whether headline is triggered
   componentDidUpdate(prevProps) {
-    // if (prevProps.timeout !== this.props.timeout) {
-    //   this.timeout = this.props.timeout;
-    //   if (!this.props.play) {
-    //     clearInterval(this.interval);
-    //     this.timeoutInterval = setTimeout(() => {
-    //       this.autoIncrement(true);
-    //     }, this.timeout);
-    //   } else {
-    //     clearTimeout(this.timeoutInterval);
-    //     clearInterval(this.interval);
-    //   }
-    // }
     if (prevProps.paused !== this.props.paused) {
       if (!this.props.play) {
         clearInterval(this.interval);
         if (prevProps.paused) {
           // then resume
-          console.log('hi');
           this.autoIncrement(true);
         }
       }
@@ -103,17 +88,14 @@ class PlayButton extends React.Component {
   }
 
   getClassName() {
-    return (this.props.play || this.props.paused) ? '' : 'playing';
+    return this.props.play || this.props.paused ? '' : 'playing';
   }
 
   render() {
     const { hasError, idyll, updateProps, ...props } = this.props;
     return (
       <div>
-        <button
-          onClick={this.play.bind(this)}
-          className={this.getClassName()}
-        >
+        <button onClick={this.play.bind(this)} className={this.getClassName()}>
           {this.getButtonText()}
         </button>
       </div>
