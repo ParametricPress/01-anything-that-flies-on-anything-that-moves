@@ -26,11 +26,24 @@ Thank you to the editors of the Parametric Press for the opportunity and special
 
 - Cox, Samuel J. 2018. “H-017-2: Operation Rolling Thunder Overview.” Naval History and Heritage Command. U.S. Navy. March 27, 2018. https://www.history.navy.mil/about-us/leadership/director/directors-corner/h-grams/h-gram-017/h-017-21.html.
 
+#### Johnson Resumes Bombings of North Vietnam
+- Johnson, Lyndon B. n.d. “January 31, 1966: Statement on the Resumption of Bombing in North Vietnam.” The Miller Center. https://millercenter.org/the-presidency/presidential-speeches/january-31-1966-statement-resumption-bombing-north-vietnam.
+
+#### US Bombs Hanoi and Hai Phong For the First Time
+- The Office of Current Intelligence. n.d. World Reaction to the US Bombing of Hanoi-Haiphong Petroleum Installations on 29 and 30 June. https://www.cia.gov/library/readingroom/docs/CIA-RDP79T00826A000900460001-6.pdf.
+
+#### Martin Luther King Delivers “Beyond Vietnam” Speech
+- King, Martin Luther. 1967. “Beyond Vietnam.” The Martin Luther King, Jr. Research and Education Institute. Speech, April 4. https://kinginstitute.stanford.edu/king-papers/documents/beyond-vietnam.
+
+#### Muhammad Ali Refuses Induction Into US Forces
+- [Opinion Poll](Muhammad Ali Refuses Induction Into US Forces)
+
+- Broadcast. 1967. Muhammad Ali Refuses Army Induction in 1967. ABC News Network. https://abcnews.go.com/US/video/muhammad-ali-refuses-army-induction-1967-39593864
+
 #### November Records Missing Due to Damage
 - [Data](https://data.world/datamil/vietnam-war-thor-data)
 
 - Zelizer, Julian E. 2018. “How the Tet Offensive Undermined American Faith in Government.” The Atlantic. Atlantic Media Company. January 16, 2018. https://www.theatlantic.com/politics/archive/2018/01/how-the-tet-offensive-undermined-american-faith-in-government/550010/.
-
 
 
 
