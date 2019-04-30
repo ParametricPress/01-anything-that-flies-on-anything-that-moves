@@ -117,7 +117,7 @@ class HeadlineItem extends React.Component {
     const { hasError, idyll, updateProps, ...props } = this.props;
     let item = this.props.headline;
     return (
-      <div className={this.props.fade ? 'faded' : 'active'} {...props}>
+      <div className={this.props.fade ? 'faded' : 'active'}>
         <div className='headline-title'>
           <div className='headline-title-date desktop'>
             {item === null

@@ -1,4 +1,9 @@
-[meta title:"Anything That Flies, On Anything That Moves" description:"The US covertly launched over two million bombing missions over Southeast Asian countries in the 1960s and 70s. Dig into the data behind the assault" /]
+[meta
+  title:"Anything That Flies, On Anything That Moves"
+  description:"The US covertly launched over two million bombing missions over Southeast Asian countries in the 1960s and 70s. Dig into the data behind the assault"
+  shareImageUrl:"https://issue-01-preview.parametric.press/issue-01/anything-that-flies-on-anything-that-moves/static/images/share.png"
+  shareImageWidth:"880"
+  shareImageHeight:"440" /]
 
 [var name:"parametricSlug" value:"anything-that-flies-on-anything-that-moves" /]
 
@@ -76,7 +81,7 @@ Records labeled as air-to-air combat missions in the original records were also 
 
 Here is the impact and breakdown of all bombing missions on each country:
 
-[h2]Laos [span className:"bombing-magnitude"]Over 2 million tons[/span][/h2]
+[h2]Laos [span className:"bombing-magnitude"]Over two million tons[/span][/h2]
 
 Laos is the heaviest bombed country per capita in the world. For nine years, the US dropped an [a href:"http://legaciesofwar.org/about-laos/secret-war-laos/"]equivalent of a planeload of bombs every eight minutes[/a] around the clock. Despite past government claims that the bombings were done over rural, unpopulated areas, these missions destroyed many villages, and displaced, maimed, and killed many Laotian civilians. It is estimated that 30 percent of these bombs—the most common and dangerous being the cluster bomb—remain undetonated throughout the country today.
 
@@ -92,8 +97,8 @@ Vietnam
 [/h2]
 
 [h3 style:`{marginTop: 0, fontWeight: 500}`]
-  South [span className:"bombing-magnitude"]Over 2 million tons[/span][br/]
-  North [span className:"bombing-magnitude"]Over 1 million tons[/span][br/]
+  South [span className:"bombing-magnitude"]Over two million tons[/span][br/]
+  North [span className:"bombing-magnitude"]Over one million tons[/span][br/]
 [/h3]
 
 The Journal of Vietnamese Studies also calculates that South Vietnam suffered the most bombings in terms of raw count despite being a US ally. The central province of Quang Tri is recorded as the most heavily bombed area in all of Vietnam with [a href:"https://pdfs.semanticscholar.org/6964/e34280dcc5d6ada50702ec3a409ea9f781c9.pdf"]only 11 of 3,500 villages remaining[/a] after the campaigns. Like Laos and Cambodia, Vietnam is contaminated with unexploded ordnances leftover from the war.
