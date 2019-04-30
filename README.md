@@ -36,7 +36,7 @@ Thank you to the editors of the Parametric Press for the opportunity and special
 - King, Martin Luther. 1967. “Beyond Vietnam.” The Martin Luther King, Jr. Research and Education Institute. Speech, April 4. https://kinginstitute.stanford.edu/king-papers/documents/beyond-vietnam.
 
 #### Muhammad Ali Refuses Induction Into US Forces
-- [Opinion Poll](Muhammad Ali Refuses Induction Into US Forces)
+- [Opinion Poll](https://news.gallup.com/poll/18097/iraq-versus-vietnam-comparison-public-opinion.aspx)
 
 - Broadcast. 1967. Muhammad Ali Refuses Army Induction in 1967. ABC News Network. https://abcnews.go.com/US/video/muhammad-ali-refuses-army-induction-1967-39593864
 
