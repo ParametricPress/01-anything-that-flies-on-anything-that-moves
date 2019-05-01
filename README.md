@@ -125,6 +125,8 @@ Thank you to the editors of the Parametric Press for the opportunity. Special th
 #### Operation Freedom Deal in Cambodia Ends
 - Finney, John W. 1973. “NIXON SEES PERIL IN BOMBING HALT; WARNS CONGRESS.” The New York Times, August 4, 1973. https://www.nytimes.com/1973/08/04/archives/nixon-sees-peril-in-bombing-halt-warns-congress-he-reaffirms-cutoff.html.
 
+- Gregory, Oliver. 2010. “Remembering the Killing Fields.” The Oxonian Globalist, December 7, 2010. https://issuu.com/rachelcee/docs/globalistmichaelmas2010_forwebsite_. (Interview with Sydney Schanberg)
+
 - High, Holly, James R. Curran, and Gareth Robinson. "Electronic Records of the Air War Over Southeast Asia: A Database Analysis." Journal of Vietnamese Studies 8, no. 4 (2013): 86-124. doi:10.1525/vs.2014.8.4.86.
 
 - Kiernan, Ben, and Taylor Owen. 2015. “ Making More Enemies than We Kill? Calculating U.S. Bomb Tonnages Dropped on Laos and Cambodia, and Weighing Their Implications.” The Asia-Pacific Journal, 3, 13 (17). 
