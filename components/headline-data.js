@@ -127,7 +127,7 @@ export let headlines = [
   {
     headline: 'Operation Menu Ends; Operation Freedom Deal Begins',
     paragraph:
-      'Operation Menu ends in late May, culminating in 3,857 sorties flown and an estimated 108,823 tons of bombs dropped on Cambodia. Operation Freedom Deal picks up where Operation Menu leaves off, and expands air warfare in Cambodia. The operation—which acts as support for Lon Nol against the rising Khmer Rouge—is confined to a forty-eight kilometer region. However, records show that 3,634 sorties are flown outside of this boundary line.',
+      'Operation Menu ends in late May, culminating in 3,857 sorties flown and an estimated 108,823 tons of bombs dropped on Cambodia. Operation Freedom Deal picks up where Operation Menu leaves off, and expands air warfare in Cambodia. The operation is supposed to support Lon Nol against the rising Khmer Rouge.',
     startDay: 19,
     startMonth: 5,
     startYear: 1970,
@@ -236,7 +236,7 @@ export let headlines = [
     endYear: 1973
   },
   {
-    headline: 'Most Intensive Phase of Cambodia Bombings Begin',
+    headline: 'Most Intensive Phase of Cambodia Bombings Begins',
     paragraph:
       'In a last-ditch effort to stop the Khmer Rouge from taking over Phnom Penh, the US uses leftover airpower to bomb Cambodia. This increase comes after missions cease in North Vietnam and slow down in South Vietnam and Laos. Researchers believe the bombs are redirected to Cambodia after the Paris Peace Accords starting early March. As a result, around three thousand civilians are killed by bombs in less than a month near Cambodia’s capital.',
     startDay: 9,
