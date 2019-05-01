@@ -6,7 +6,7 @@ The US covertly launched over two million bombing missions over Southeast Asian 
 
 ## References and Appreciation
 
-Thank you to the editors of the Parametric Press for the opportunity and special thanks to Matthew Conlen for the guidance and help with the visualization and editing. Lastly, thank you to Noelle Vo and Kateka Seth for the support during the late hours of the night.
+Thank you to the editors of the Parametric Press for the opportunity. Special thanks to Victoria Uren for editing and Matthew Conlen for guidance and help with the visualization and editing. Lastly, thank you to Noelle Vo and Kateka Seth for the support during the late hours of the night.
 
 ### References by Headline
 
@@ -57,15 +57,57 @@ Thank you to the editors of the Parametric Press for the opportunity and special
 #### Johnson Calls for Complete Halt of North Vietnam Bombings; Operation Rolling Thunder Ends
 - Cox, Samuel J. 2018. “H-017-2: Operation Rolling Thunder Overview.” Naval History and Heritage Command. U.S. Navy. March 27, 2018. https://www.history.navy.mil/about-us/leadership/director/directors-corner/h-grams/h-gram-017/h-017-21.html.
 
+- Johnson, Lyndon B. n.d. “The President Announcing His Decision to Halt the Bombing of North Vietnam.” LBJ Presidential Library. Speech. http://www.lbjlibrary.org/exhibits/the-president-announcing-his-decision-to-halt-the-bombing-of-north-vietnam.
+
+#### Nixon Orders Secret Carpet Bombings Over Cambodia
+- Clymer, Kenton. "Cambodia and Laos in the Vietnam War." In The Columbia History of the Vietnam War, edited by Anderson David L., 357-82. Columbia University Press, 2011. http://www.jstor.org/stable/10.7312/ande13480.18.
+
+- High, Holly, James R. Curran, and Gareth Robinson. "Electronic Records of the Air War Over Southeast Asia: A Database Analysis." Journal of Vietnamese Studies 8, no. 4 (2013): 86-124. doi:10.1525/vs.2014.8.4.86.
+
+- Kiernan, Ben. 1989. “The American Bombardment of Kampuchea, 1969-1973.” The Future of the Past: Revisionism and Vietnam 1 (1). https://digitalcommons.lasalle.edu/cgi/viewcontent.cgi?article=1002&context=vietnamgeneration.
+
 #### Demonstrators March on Washington in Nationwide Moratorium
 - Wallace, Nina. "IN THE BELLY OF THE MONSTER: ASIAN AMERICAN OPPOSITION TO THE VIETNAM WAR." Densho Blog(blog), November 15, 2017. https://densho.org/asian-american-opposition-vietnam-war/.
 
 - PBS. "Moratorium Protests, 1969." Advertisement. PBS.org. September 17, 2017. https://www.pbs.org/video/moratorium-protests-1969-ewcsig/.
 
+#### Prince Sihanouk Falls, Lon Nol Rises
+- Kiernan, Ben. 1989. “The American Bombardment of Kampuchea, 1969-1973.” The Future of the Past: Revisionism and Vietnam 1 (1). https://digitalcommons.lasalle.edu/cgi/viewcontent.cgi?article=1002&context=vietnamgeneration.
+
+- “Ending the Vietnam War, 1969–1973.” n.d. U.S. Department of State. U.S. Department of State. https://history.state.gov/milestones/1969-1976/ending-vietnam.
+
+#### Nixon Orders a Joint US and South Vietnamese Attack in Cambodia; Four Kent State Students Slain During Protest
+- Semple, Robert B. 1970. “NIXON SENDS COMBAT FORCES TO CAMBODIA TO DRIVE COMMUNISTS FROM STAGING ZONE.” The New York Times, May 1, 1970. https://www.nytimes.com/1970/05/01/archives/nixon-sends-combat-forces-to-cambodia-not-an-invasion-president.html.
+
+- Lewis, Jerry M, and Thomas R Hensley. n.d. “The May 4 Shootings at Kent State University: The Search For.” Kent State University. Kent State University. https://www.kent.edu/may-4-historical-accuracy.
+
+#### Operation Menu Ends; Operation Freedom Deal Begins
+- Clymer, Kenton. "Cambodia and Laos in the Vietnam War." In The Columbia History of the Vietnam War, edited by Anderson David L., 357-82. Columbia University Press, 2011. http://www.jstor.org/stable/10.7312/ande13480.18.
+
+#### Anything that Flies, On Anything that Moves
+
 #### Pentagon Papers Are Released By The New York Times
 - USA. Pentagon Papers. https://www.archives.gov/research/pentagon-papers.
 
 - Chokshi, Niraj. "Behind the Race to Publish the Top-Secret Pentagon Papers." The New York Times. December 20, 2017. https://www.nytimes.com/2017/12/20/us/pentagon-papers-post.html.
+
+#### Nixon Resumes Bombing in North Vietnam; Laos Bombing Decreases
+
+#### FBI Launches Investigation of Watergate Break-Ins
+
+#### US Carpet Bombs North Vietnam in “Christmas Bombings”
+
+#### Paris Peace Accords Signed; Ceasefire Agreed
+
+#### Operation Barrel Roll End
+
+#### Most Intensive Phase of Cambodia Bombings Begins
+- High, Holly, James R. Curran, and Gareth Robinson. "Electronic Records of the Air War Over Southeast Asia: A Database Analysis." Journal of Vietnamese Studies 8, no. 4 (2013): 86-124. doi:10.1525/vs.2014.8.4.86.
+
+- Kiernan, Ben. 1990. “Roots of Genocide: New Evidence on the US Bombardment of Cambodia.” Cultural Survival. September 1990. https://www.culturalsurvival.org/publications/cultural-survival-quarterly/roots-genocide-new-evidence-us-bombardment-cambodia.
+
+#### Operation Freedom Deal in Cambodia Ends
+
 
 ## Installing dependencies
 
