@@ -54,11 +54,18 @@ Thank you to the editors of the Parametric Press for the opportunity and special
 #### The May Offensive Hits South Vietnam
 - Thompson, A W. 1968. The Defense of Saigon. The Defense of Saigon. https://www.vietnam.ttu.edu/star/images/039/0390135001A.pdf.
 
-#### Operation Rolling Thunder Ends
+#### Johnson Calls for Complete Halt of North Vietnam Bombings; Operation Rolling Thunder Ends
 - Cox, Samuel J. 2018. “H-017-2: Operation Rolling Thunder Overview.” Naval History and Heritage Command. U.S. Navy. March 27, 2018. https://www.history.navy.mil/about-us/leadership/director/directors-corner/h-grams/h-gram-017/h-017-21.html.
 
-#### Johnson Calls for Complete Halt of North Vietnam Bombings
--
+#### Demonstrators March on Washington in Nationwide Moratorium
+- Wallace, Nina. "IN THE BELLY OF THE MONSTER: ASIAN AMERICAN OPPOSITION TO THE VIETNAM WAR." Densho Blog(blog), November 15, 2017. https://densho.org/asian-american-opposition-vietnam-war/.
+
+- PBS. "Moratorium Protests, 1969." Advertisement. PBS.org. September 17, 2017. https://www.pbs.org/video/moratorium-protests-1969-ewcsig/.
+
+#### Pentagon Papers Are Released By The New York Times
+- USA. Pentagon Papers. https://www.archives.gov/research/pentagon-papers.
+
+- Chokshi, Niraj. "Behind the Race to Publish the Top-Secret Pentagon Papers." The New York Times. December 20, 2017. https://www.nytimes.com/2017/12/20/us/pentagon-papers-post.html.
 
 ## Installing dependencies
 
