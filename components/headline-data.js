@@ -127,7 +127,7 @@ export let headlines = [
   {
     headline: 'Operation Menu Ends; Operation Freedom Deal Begins',
     paragraph:
-      'Operation Menu ends in late May, culminating in 3,857 sorties flown and an estimated 108,823 tons of bombs dropped on Cambodia. Operation Freedom Deal picks up where Operation Menu leaves off, and expands air warfare in Cambodia. The operation is supposed to support Lon Nol against the rising Khmer Rouge.',
+      'Operation Menu ends in late May, culminating in 3,857 sorties flown and an estimated 108,823 tonnes of bombs dropped on Cambodia. Operation Freedom Deal picks up where Operation Menu leaves off, and expands air warfare in Cambodia. The operation is supposed to support Lon Nol against the rising Khmer Rouge.',
     startDay: 19,
     startMonth: 5,
     startYear: 1970,
@@ -216,7 +216,7 @@ export let headlines = [
   {
     headline: 'Paris Peace Accords Signed; Ceasefire Agreed',
     paragraph:
-      'North Vietnam and South Vietnam are forced by the US to sign the Paris Peace Accords, resulting in a halt of North Vietnam bombings. Shortly after, bombings directed toward Laos sharply increase with an all-time high of about fifty-five thousand tons in February alone',
+      'North Vietnam and South Vietnam are forced by the US to sign the Paris Peace Accords, resulting in a halt of North Vietnam bombings. Shortly after, bombings directed toward Laos sharply increase with an all-time high of about fifty-five thousand tonnes in February alone',
     startDay: 27,
     startMonth: 1,
     startYear: 1973,
