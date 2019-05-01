@@ -66,24 +66,14 @@ export let headlines = [
     endYear: 1968
   },
   {
-    headline: 'Operation Rolling Thunder Ends',
+    headline:
+      'Johnson Calls for Complete Halt of North Vietnam Bombings; Operation Rolling Thunder Ends',
     paragraph:
-      'The three-year bombing operation over North Vietnam ends, lasting longer than US air involvement within Europe during the entirety of World War II. Rolling Thunder is regarded as a failure and has little effect in terms of whittling down North Vietnamese effort. Research estimates that 864,000 tons of bombs were dropped on North Vietnam thus far.',
-    startDay: 1,
-    startMonth: 11,
+      'Due to pressure from home opposition, Johnson attempts to bring North Vietnam to the bargaining table by halting bombing operations in the area. A day later, Rolling Thunder ends after three-years of operation, lasting longer than US air involvements in Europe during the entirety of World War II. Rolling Thunder is regarded as a failure and has little effect in terms of whittling down North Vietnamese efforts. All the leftover available sorties originally destined for North Vietnam divert to South Vietnam, the Ho Chi Minh Trail, and Laos, which sees a sharp increase in bombing points.',
+    startDay: 31,
+    startMonth: 10,
     startYear: 1968,
     endDay: 10,
-    endMonth: 11,
-    endYear: 1968
-  },
-  {
-    headline: 'Johnson Calls for Complete Halt of North Vietnam Bombings',
-    paragraph:
-      'Due to pressure from home opposition, Johnson attempts to bring North Vietnam to the bargaining table by halting bombing operations in the area. All the leftover available sorties originally destined for North Vietnam divert to South Vietnam, the Ho Chi Minh Trail, and Laos, which sees a sharp increase in bombing points. This secret redirection to Laos allows the US to avoid political scrutiny.',
-    startDay: 11,
-    startMonth: 11,
-    startYear: 1968,
-    endDay: 25,
     endMonth: 11,
     endYear: 1968
   },
