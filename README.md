@@ -81,10 +81,17 @@ Thank you to the editors of the Parametric Press for the opportunity. Special th
 
 - Lewis, Jerry M, and Thomas R Hensley. n.d. “The May 4 Shootings at Kent State University: The Search For.” Kent State University. Kent State University. https://www.kent.edu/may-4-historical-accuracy.
 
+- Nixon, Richard M. n.d. “President Nixon’s Speech on Cambodia, April 30, 1970.” Temple University. Speech. https://sites.temple.edu/immerman/president-nixons-speech-on-cambodia-april-30-1970/.
+
 #### Operation Menu Ends; Operation Freedom Deal Begins
 - Clymer, Kenton. "Cambodia and Laos in the Vietnam War." In The Columbia History of the Vietnam War, edited by Anderson David L., 357-82. Columbia University Press, 2011. http://www.jstor.org/stable/10.7312/ande13480.18.
 
+- Finney, John W. n.d. “More Secret Air Attacks In Cambodia Disclosed.” The New York Times. https://www.nytimes.com/1973/09/11/archives/more-secret-air-attacks-in-cambodia-disclosed-the-pentagon-concedes.html.
+
 #### Anything that Flies, On Anything that Moves
+- Blanton, Thomas, and William Burr. n.d. The Kissinger Telcons. The Kissinger Telcons. 123rd ed. National Security Archive Electronic Briefing Book . https://nsarchive2.gwu.edu/NSAEBB/NSAEBB123/DNSA%20KA04472%20December%209%201970%208%2045%20PM%20Kissinger%20Telcons.pdf
+
+- Blanton, Thomas, and William Burr. n.d. The Kissinger Telcons. The Kissinger Telcons. 123rd ed. National Security Archive Electronic Briefing Book . https://nsarchive2.gwu.edu/NSAEBB/NSAEBB123/3%20%20Kissinger%20telcon%20with%20Haig.pdf
 
 #### Pentagon Papers Are Released By The New York Times
 - USA. Pentagon Papers. https://www.archives.gov/research/pentagon-papers.
@@ -92,14 +99,23 @@ Thank you to the editors of the Parametric Press for the opportunity. Special th
 - Chokshi, Niraj. "Behind the Race to Publish the Top-Secret Pentagon Papers." The New York Times. December 20, 2017. https://www.nytimes.com/2017/12/20/us/pentagon-papers-post.html.
 
 #### Nixon Resumes Bombing in North Vietnam; Laos Bombing Decreases
+- The New York Times. 1974. “NIXON ON BOMBING RECORDED IN TAPE,” June 30, 1974. https://www.nytimes.com/1974/06/30/archives/nixon-on-bombing-recorded-in-tape-reason-for-moving.html.
 
 #### FBI Launches Investigation of Watergate Break-Ins
+- [The Final Report](https://www.senate.gov/artandhistory/history/common/investigations/pdf/Watergate_FinalReport1974.pdf)
+
+- “Select Committee on Presidential Campaign Activities.” 2018. U.S. Senate: Select Committee on Presidential Campaign Activities. July 31, 2018. https://www.senate.gov/artandhistory/history/common/investigations/Watergate.htm.
 
 #### US Carpet Bombs North Vietnam in “Christmas Bombings”
+- Kesby, Rebecca. 2012. “North Vietnam, 1972: The Christmas Bombing of Hanoi.” BBC News, December 24, 2012. https://www.bbc.com/news/magazine-20719382.
 
 #### Paris Peace Accords Signed; Ceasefire Agreed
+- [Document](https://www.cvce.eu/content/publication/2001/10/12/656ccc0d-31ef-42a6-a3e9-ce5ee7d4fc80/publishable_en.pdf)
 
-#### Operation Barrel Roll End
+- “Ending the Vietnam War, 1969–1973.” n.d. U.S. Department of State. U.S. Department of State. https://history.state.gov/milestones/1969-1976/ending-vietnam.
+
+#### Operation Barrel Roll Ends
+- Lamy, Perry L. 1995. http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.501.2713&rep=rep1&type=pdf.
 
 #### Most Intensive Phase of Cambodia Bombings Begins
 - High, Holly, James R. Curran, and Gareth Robinson. "Electronic Records of the Air War Over Southeast Asia: A Database Analysis." Journal of Vietnamese Studies 8, no. 4 (2013): 86-124. doi:10.1525/vs.2014.8.4.86.
@@ -107,7 +123,7 @@ Thank you to the editors of the Parametric Press for the opportunity. Special th
 - Kiernan, Ben. 1990. “Roots of Genocide: New Evidence on the US Bombardment of Cambodia.” Cultural Survival. September 1990. https://www.culturalsurvival.org/publications/cultural-survival-quarterly/roots-genocide-new-evidence-us-bombardment-cambodia.
 
 #### Operation Freedom Deal in Cambodia Ends
-
+- Finney, John W. 1973. “NIXON SEES PERIL IN BOMBING HALT; WARNS CONGRESS.” The New York Times, August 4, 1973. https://www.nytimes.com/1973/08/04/archives/nixon-sees-peril-in-bombing-halt-warns-congress-he-reaffirms-cutoff.html.
 
 ## Installing dependencies
 
