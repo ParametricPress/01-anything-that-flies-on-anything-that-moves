@@ -65,3 +65,7 @@ build
 missions.csv
 
 static/fonts
+
+
+_warc_cache/
+*.warc.gz

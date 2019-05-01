@@ -33,8 +33,8 @@
     url: 'https://github.com/megan-vo'
   }]`
   doi:""
-  archive:"https://parametric.press/archives/issue-01/anything-that-flies-on-anything-that-moves"
-  source:"https://github.com/ParametricPress/01-anything-that-flies-on-anything-that-moves"
+  archive:`'https://parametric-press-archives.s3.amazonaws.com/issue-01/' + parametricSlug + '.warc.gz'`
+  source:`"https://github.com/ParametricPress/01-" + parametricSlug `
 /]
 
 On the 9th of December 1970, President Nixon broke his promise to Congress by [a href:"https://nsarchive2.gwu.edu/NSAEBB/NSAEBB123/DNSA%20KA04472%20December%209%201970%208%2045%20PM%20Kissinger%20Telcons.pdf"]demanding airstrikes deep within Cambodia[/a], outside of the 30 kilometer jurisdiction from Vietnam’s borders. Dissatisfied and frustrated with the inefficacy of the bombing operations in rooting out the North Vietnamese, Nixon ordered Kissinger to call for a mass carpet bombing over the small country—[a href:"https://nsarchive2.gwu.edu/NSAEBB/NSAEBB123/3%20%20Kissinger%20telcon%20with%20Haig.pdf"]to which Kissinger passed on to General Haig[/a], “It’s an order, it’s to be done. Anything that flies on anything that moves.”
@@ -120,7 +120,7 @@ US efforts to oust communist threats with mass carpet bombing did not work. In m
 
 **Megan Vo** is the daughter of two refugees and is currently an undergraduate studying computer science at the University of Washington.
 
-Edited by Victoria Uren and Matthew Conlen.
+Edited by Matthew Conlen and Victoria Uren.
 
 [/AuthorBio]
 
