@@ -80,7 +80,7 @@ export let headlines = [
   {
     headline: 'Nixon Becomes President',
     paragraph:
-      'Richard M. Nixon swears into office and becomes the 37th President of the United States. Despite later pledging to honorably exit the Vietnam War, the war under Nixon continues for another three years and expands further into Cambodia',
+      'Richard M. Nixon swears into office and becomes the 37th President of the United States. Despite later pledging to honorably exit the Vietnam War, the war under Nixon continues for another three years and expands further into Cambodia.',
     startDay: 20,
     startMonth: 1,
     startYear: 1969,
@@ -308,7 +308,7 @@ export let headlines = [
   {
     headline: 'Pentagon Papers Are Released By The New York Times',
     paragraph:
-      'The New York Times releases the first installment of the Pentagon Papers. The study reveals the extent to which Johnson and his administration lied about involvement in Southeast Asia, which further decreases public approval of the war. Nixon’s administration asks the paper to stop releasing the papers and sues The Times when they refuse. The Supreme Court rules against the administration.',
+      'The New York Times releases the first installment of the Pentagon Papers. The study reveals the extent to which Johnson and his administration lied about involvement in Southeast Asia, which further decreases public approval of the war. Nixon’s administration asks The Times to stop releasing the papers and sues them when they refuse. The Supreme Court rules against the administration.',
     startDay: 13,
     startMonth: 6,
     startYear: 1971,
