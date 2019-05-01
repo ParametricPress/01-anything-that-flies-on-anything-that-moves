@@ -25,7 +25,7 @@
   title:`["Anthything", "That Moves"]`
   longTitle:`["Anything That Flies,", "On Anything That Moves"]`
   date:"May 1, 2019"
-  dek:"The US launched over two million bombing missions over Southeast Asian countries in the 1960s and 70s. Dig into the data behind the assault."
+  dek:"The US covertly launched over two million bombing missions over Southeast Asian countries in the 1960s and 70s. Dig into the data behind the assault."
   fullWidth:true
   authors:`[{
     name: "Megan Vo",
@@ -39,7 +39,7 @@
 
 On the 9th of December, 1970, President Nixon broke his promise to Congress to keep US planes thirty kilometers within Vietnamese borders by [a href:"https://nsarchive2.gwu.edu/NSAEBB/NSAEBB123/DNSA%20KA04472%20December%209%201970%208%2045%20PM%20Kissinger%20Telcons.pdf"]demanding airstrikes deep within Cambodia[/a], outside of the jurisdiction. Dissatisfied and frustrated with the inefficacy of bombing operations that had failed to root out the North Vietnamese, Nixon ordered Kissinger to call for mass carpet bombing over the small country—[a href:"https://nsarchive2.gwu.edu/NSAEBB/NSAEBB123/3%20%20Kissinger%20telcon%20with%20Haig.pdf"]as Kissinger passed on to General Haig[/a], “It’s an order, it’s to be done. Anything that flies on anything that moves.”
 
-Much of the reporting on US bombing campaigns published during the Vietnam War highlighted the destruction taking place in North Vietnam, leading to greater public pressure on legislators to create tighter bombing restrictions over the area. However, the US also secretly bombed Cambodia and Laos during the sixties and seventies at a [a href:"https://www.jstor.org/stable/10.1525/vs.2014.8.4.86"]much higher magnitude than North Vietnam[/a]. The covert status of these bombings allowed the US to wage mass air warfare over the Southeast Asian countries with little scrutiny. [a href:"https://data.world/datamil/vietnam-war-thor-data"]Data records[/a] of these bombing missions, stored by the Department of Defense, tell lesser-known stories of the Vietnam War’s bloody sideshows, and reveal a violent legacy that endures to this day.
+Much of the reporting on US bombing campaigns published during the Vietnam War highlighted the destruction taking place in North Vietnam, leading to greater public pressure on legislators to create tighter bombing restrictions over the area. However, by hiding the extent of military involvement in Southeast Asia from the public, the US was also able to secretly bomb Cambodia and Laos during the sixties and seventies at a [a href:"https://www.jstor.org/stable/10.1525/vs.2014.8.4.86"]much higher magnitude than North Vietnam[/a]. [a href:"https://data.world/datamil/vietnam-war-thor-data"]Data records[/a] of these bombing missions, stored by the Department of Defense, tell lesser-known stories of the Vietnam War’s bloody sideshows, and reveal a violent legacy that endures to this day.
 
 These records show that from October of 1965 to August of 1973, the US launched an average of 924 bombing missions per day, accumulating over two million in total over eight years. Each of these potentially deadly strikes are presented in the visualization below, where the teal dots signify bombing-related events, and the pink offer domestic context. Note that data from between 1974 and 1975 have been omitted, due to missing and incomplete records.
 
