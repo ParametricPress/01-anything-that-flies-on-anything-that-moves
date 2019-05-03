@@ -1,7 +1,7 @@
 [meta
   title:"Anything That Flies, On Anything That Moves"
   description:"The US covertly launched over two million bombing missions over Southeast Asian countries in the 1960s and 70s. Dig into the data behind the assault"
-  shareImageUrl:"https://issue-01-preview.parametric.press/issue-01/anything-that-flies-on-anything-that-moves/static/images/share.png"
+  shareImageUrl:"https://parametric.press/issue-01/anything-that-flies-on-anything-that-moves/static/images/share.png"
   shareImageWidth:"880"
   shareImageHeight:"440" /]
 
@@ -32,7 +32,7 @@
     role: 'Author',
     url: 'https://github.com/megan-vo'
   }]`
-  doi:""
+  doi:"https://doi.org/10.5281/zenodo.2656655"
   archive:`'https://parametric-press-archives.s3.amazonaws.com/issue-01/' + parametricSlug + '.warc.gz'`
   source:`"https://github.com/ParametricPress/01-" + parametricSlug `
 /]
