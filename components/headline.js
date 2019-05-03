@@ -5,11 +5,8 @@ import { headlines } from './headline-data.js';
 class Headline extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      headlineSubset: []
-    };
 
-    this.headline = null;
+    this.headline = headlines[0];
 
     this.stageNewHeadlines = this.stageNewHeadlines.bind(this);
     this.removeHeadlines = this.removeHeadlines.bind(this);
@@ -48,7 +45,7 @@ class Headline extends React.Component {
   // for headlines that match current date. Returns
   // array of headline objects that do
   stageNewHeadlines(propsDate, prevProps) {
-    if (this.state.headlineSubset.length === 0) {
+    if (this.headline === null) {
       let newHeadlines = headlines.filter(headline => {
         // prevents re-rendering infinite loop
         if (this.headline !== null) {

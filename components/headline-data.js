@@ -3,7 +3,7 @@ export let headlines = [
     headline: 'Operation Rolling Thunder Underway in North Vietnam',
     paragraph:
       'Operation Rolling Thunder jumpstarts the war under President Lyndon B. Johnson in early March, 1965. Originally intended to “break the will of North Vietnam” with heavy bombing, Rolling Thunder eventually shifts aims to destroy the supply line of materials and men from the North to the South.',
-    startDay: 2,
+    startDay: 1,
     startMonth: 10,
     startYear: 1965,
     endDay: 12, // last till end of month
