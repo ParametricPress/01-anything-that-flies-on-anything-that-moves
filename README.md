@@ -138,4 +138,4 @@ Thank you to the editors of the Parametric Press for the opportunity. Special th
 
 ## Running local dev server
 
-1. Run `idyll` in the root of this project.
+1. Run `idyll --template _local.html` in the root of this project.
